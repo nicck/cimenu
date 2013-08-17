@@ -1,4 +1,4 @@
-require 'lib/download'
+require 'lib/connection_delegate'
 require 'lib/menu'
 require 'lib/preferences'
 

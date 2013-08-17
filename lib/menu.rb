@@ -21,10 +21,15 @@ class Menu < NSMenu
     addItem(quitItem)
   end
 
+  private
+
   def addBranchesFor(project)
     project['branches'].each do |branch|
       item = NSMenuItem.new
-      item.title = branch['branch_name']
+
+      branch_name = branch['branch_name']
+      item.title = truncate(branch_name, 32)
+      puts item.title.length
       item.target = delegate
       item.action = 'quit:'
       item.image = NSImage.alloc.initWithContentsOfFile "img/icon_offline@2x.png"
@@ -33,6 +38,14 @@ class Menu < NSMenu
     end
 
     addItem(NSMenuItem.separatorItem)
+  end
+
+  def truncate(branch_name, length)
+    if branch_name.length > length
+      "#{branch_name[0..length / 2 - 1]}...#{branch_name[-length / 2..-1]}"
+    else
+     branch_name
+    end
   end
 
   def quitItem
