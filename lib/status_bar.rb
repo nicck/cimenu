@@ -4,9 +4,6 @@ class StatusBar
   def initialize(delegate)
     self.delegate = delegate
 
-    @iconOffline = NSImage.alloc.initWithContentsOfFile "img/icon_offline@2x.png"
-    @iconActive = NSImage.alloc.initWithContentsOfFile "img/icon_offline@2x.png"
-
     @statusBar = NSStatusBar
       .systemStatusBar
       .statusItemWithLength(NSVariableStatusItemLength)
@@ -27,10 +24,38 @@ class StatusBar
     @statusBar.image = iconActive
   end
 
+  def startAnimation
+    @animationFrame = 0
+    @animationTimer = NSTimer.scheduledTimerWithTimeInterval 0.02,
+      target:self,
+      selector:'updateImage:',
+      userInfo:nil,
+      repeats:true
+  end
+
+  def stopAnimation
+    p 'stopAnimation'
+    @animationTimer.invalidate && @animationTimer = nil if @animationTimer
+    @statusBar.image = iconOffline
+  end
+
+  def updateImage(timer)
+    @statusBar.image = iconOfflineForFrame(@animationFrame)
+    @animationFrame = (@animationFrame == 9) ? 1 : @animationFrame + 1
+  end
+
   private
 
+  def iconOffline
+    @iconOffline ||= NSImage.alloc.initWithContentsOfFile "img/icon_offline@2x.png"
+  end
+
+  def iconOfflineForFrame(frame)
+    NSImage.alloc.initWithContentsOfFile "img/animation/#{frame}.png"
+  end
+
   def iconActive
-    @iconActive
+    @iconActive ||= NSImage.alloc.initWithContentsOfFile "img/icon_offline@2x.png"
   end
 
   def iconClicked

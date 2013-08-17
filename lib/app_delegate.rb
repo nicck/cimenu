@@ -45,7 +45,8 @@ class AppDelegate
 
     request = NSMutableURLRequest.requestWithURL(NSURL.URLWithString(url))
 
-    NSURLConnection.connectionWithRequest(request, delegate:ConnectionDelegate.new)
+    NSURLConnection.connectionWithRequest(request,
+      delegate:ConnectionDelegate.new(statusBar))
   end
 
   def statusBar

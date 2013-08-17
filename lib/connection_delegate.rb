@@ -1,6 +1,11 @@
 require 'json'
 
 class ConnectionDelegate
+  def initialize(statusBar)
+    @statusBar = statusBar
+    @statusBar.startAnimation
+  end
+
   def connection(connection, didReceiveResponse:response)
     @response = response
     @downloadData = NSMutableData.data
@@ -11,6 +16,8 @@ class ConnectionDelegate
   end
 
   def connectionDidFinishLoading(connection)
+    @statusBar.stopAnimation
+
     case @response.statusCode
     when 200...300
       responseBody = NSString.alloc.initWithData @downloadData,
