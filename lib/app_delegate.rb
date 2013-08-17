@@ -23,6 +23,8 @@ class AppDelegate
   end
 
   def reDrawMenu(projects)
+    @trayMenu.removeAllItems
+
     projects.each do |project|
       item = NSMenuItem.new
       item.title = project['name']
@@ -31,8 +33,6 @@ class AppDelegate
 
       addBranchesFor(project)
     end
-
-    @trayMenu.addItem(NSMenuItem.separatorItem)
 
     @trayMenu.addItem(preferencesItem)
     @trayMenu.addItem(quitItem)
@@ -72,6 +72,8 @@ class AppDelegate
 
       @trayMenu.addItem(item)
     end
+
+    @trayMenu.addItem(NSMenuItem.separatorItem)
   end
 
   def statusBar
