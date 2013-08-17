@@ -35,6 +35,8 @@ class StatusBar
       selector:'updateImage:',
       userInfo:nil,
       repeats:true
+
+    NSRunLoop.mainRunLoop.addTimer(@animationTimer, forMode:NSRunLoopCommonModes)
   end
 
   def stopAnimation
