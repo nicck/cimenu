@@ -1,3 +1,5 @@
+require 'time'
+require 'ext/fixnum'
 require 'lib/preferences'
 
 class TrayMenu < NSMenu
@@ -25,16 +27,16 @@ class TrayMenu < NSMenu
 
   def addBranchesFor(project)
     project['branches'].each do |branch|
-      item = NSMenuItem.new
+      if Time.parse(branch['finished_at']) > 2.days.ago
+        item = NSMenuItem.new
 
-      branch_name = branch['branch_name']
-      item.title = truncate(branch_name, 32)
-      puts item.title.length
-      item.target = delegate
-      item.action = 'quit:'
-      item.image = NSImage.alloc.initWithContentsOfFile "img/icon_offline@2x.png"
+        item.title = truncate(branch['branch_name'], 32)
+        item.target = delegate
+        item.action = 'quit:'
+        item.image = NSImage.alloc.initWithContentsOfFile "img/icon_branch_success.png"
 
-      addItem(item)
+        addItem(item)
+      end
     end
 
     addItem(NSMenuItem.separatorItem)
