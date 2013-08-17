@@ -1,19 +1,19 @@
 require 'lib/connection_delegate'
-require 'lib/menu'
+require 'lib/tray_menu'
 require 'lib/preferences'
 
 class AppDelegate
   AUTH_TOKEN = ENV['SEM_AUTH_TOKEN']
 
-  attr_reader :menu
+  attr_reader :trayMenu
 
   def applicationDidFinishLaunching(notification)
     puts 'Hi!'
 
     @iconActive = NSImage.alloc.initWithContentsOfFile "img/icon_offline@2x.png"
 
-    @menu = Menu.new(self)
-    statusBar.menu = @menu
+    @trayMenu = TrayMenu.new(self)
+    statusBar.menu = @trayMenu
 
     fetchProjects
   end

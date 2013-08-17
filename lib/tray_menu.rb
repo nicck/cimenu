@@ -1,6 +1,6 @@
 require 'lib/preferences'
 
-class Menu < NSMenu
+class TrayMenu < NSMenu
   def initialize(delegate)
     self.delegate = delegate
   end

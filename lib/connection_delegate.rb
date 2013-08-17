@@ -13,11 +13,12 @@ class ConnectionDelegate
   def connectionDidFinishLoading(connection)
     case @response.statusCode
     when 200...300
-      responseBody = NSString.alloc.initWithData(@downloadData, encoding:NSUTF8StringEncoding)
+      responseBody = NSString.alloc.initWithData @downloadData,
+        encoding:NSUTF8StringEncoding
       puts "Downloaded!"
 
       json = JSON.parse(responseBody)
-      NSApplication.sharedApplication.delegate.menu.reDraw(json)
+      NSApplication.sharedApplication.delegate.trayMenu.reDraw(json)
     when 300...400
       puts "TODO: Handle redirect!"
     else
