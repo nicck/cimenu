@@ -7,7 +7,7 @@ class TrayMenu < NSMenu
     self.delegate = delegate
   end
 
-  def reDraw(projects)
+  def reDraw(projects = [])
     removeAllItems
 
     projects.each do |project|

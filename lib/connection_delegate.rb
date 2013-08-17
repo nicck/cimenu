@@ -25,7 +25,7 @@ class ConnectionDelegate
 
       json = JSON.parse(responseBody)
 
-      @statusBar.menu.reDraw(json)
+      @statusBar.trayMenu.reDraw(json)
     when 300...400
       puts "TODO: Handle redirect!"
     else

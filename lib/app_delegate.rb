@@ -10,10 +10,12 @@ class AppDelegate
     puts 'Hi!'
 
     @trayMenu = TrayMenu.new(self)
-    statusBar.menu = @trayMenu
+    @trayMenu.reDraw
+
+    statusBar.trayMenu = @trayMenu
 
     dataFetcher = DataFetcher.new(statusBar)
-    # dataFetcher.fetch
+    dataFetcher.fetch
     dataFetcher.startTimer
   end
 

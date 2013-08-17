@@ -8,15 +8,15 @@ class StatusBar
       .systemStatusBar
       .statusItemWithLength(NSVariableStatusItemLength)
 
-    @statusBar.image = @iconOffline
+    @statusBar.image = iconActive
     @statusBar.highlightMode = true
   end
 
-  def menu=(menu)
+  def trayMenu=(menu)
     @statusBar.menu = menu
   end
 
-  def menu
+  def trayMenu
     @statusBar.menu
   end
 
