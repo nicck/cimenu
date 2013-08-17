@@ -2,7 +2,7 @@ require 'lib/preferences'
 
 class Menu < NSMenu
   def initialize(delegate)
-    @delegate = delegate
+    self.delegate = delegate
   end
 
   def reDraw(projects)
