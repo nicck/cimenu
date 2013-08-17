@@ -1,11 +1,6 @@
-class Download
-  attr_reader :response, :responseBody, :json
+require 'json'
 
-  def start(request)
-    puts "START!"
-    NSURLConnection.connectionWithRequest(request, delegate:self)
-  end
-
+class ConnectionDelegate
   def connection(connection, didReceiveResponse:response)
     @response = response
     @downloadData = NSMutableData.data
