@@ -1,6 +1,7 @@
 require 'lib/connection_delegate'
 require 'lib/tray_menu'
 require 'lib/preferences'
+require 'lib/status_bar'
 
 class AppDelegate
   AUTH_TOKEN = ENV['SEM_AUTH_TOKEN']
@@ -9,8 +10,6 @@ class AppDelegate
 
   def applicationDidFinishLaunching(notification)
     puts 'Hi!'
-
-    @iconActive = NSImage.alloc.initWithContentsOfFile "img/icon_offline@2x.png"
 
     @trayMenu = TrayMenu.new(self)
     statusBar.menu = @trayMenu
@@ -25,6 +24,14 @@ class AppDelegate
 
   def showPreferences(notification)
     preferencesWindow.show
+  end
+
+  def menuWillOpen(notification)
+    statusBar.menuWillOpen
+  end
+
+  def menuDidClose(notification)
+    statusBar.menuDidClose
   end
 
   private
@@ -42,31 +49,6 @@ class AppDelegate
   end
 
   def statusBar
-    @statusBar ||= begin
-      image = NSImage.alloc.initWithContentsOfFile "img/icon_offline@2x.png"
-
-      statusBar = NSStatusBar
-        .systemStatusBar
-        .statusItemWithLength(NSVariableStatusItemLength)
-      statusBar.image = image
-      statusBar.highlightMode = true
-      statusBar
-    end
-  end
-
-  def iconActive
-    @iconActive
-  end
-
-  def iconClicked
-    @iconClicked ||= NSImage.alloc.initWithContentsOfFile "img/icon_clicked@2x.png"
-  end
-
-  def menuWillOpen(notification)
-    statusBar.image = iconClicked
-  end
-
-  def menuDidClose(notification)
-    statusBar.image = iconActive
+    @statusBar ||= StatusBar.new(self)
   end
 end
