@@ -1,8 +1,23 @@
+require 'json'
+
 framework 'AppKit'
 
 class AppDelegate
+  AUTH_TOKEN = ENV['SEM_AUTH_TOKEN']
+
   def applicationDidFinishLaunching(notification)
     puts 'Hi!'
+
+    statusBar.menu = trayMenu
+
+    projects.each do |project|
+      item = NSMenuItem.new
+      item.title = project
+      item.target = self
+      item.action = 'quit:'
+
+      trayMenu.addItem(item)
+    end
 
     trayMenu.addItem(preferencesItem)
     trayMenu.addItem(quitItem)
@@ -32,6 +47,20 @@ class AppDelegate
       # window.delegate = app.delegate
       window.orderFrontRegardless
     end
+  end
+
+  def projects
+    url = "https://semaphoreapp.com/api/v1/projects?auth_token=#{AUTH_TOKEN}"
+
+    url_object = NSURL.URLWithString(url)
+    request = NSMutableURLRequest.requestWithURL(url_object,
+      cachePolicy: NSURLRequestReloadIgnoringCacheData,
+      timeoutInterval: 30.0)
+
+    content = NSMutableString.alloc.initWithContentsOfURL(url_object,
+      encoding:NSUTF8StringEncoding, error:nil)
+
+    JSON.parse(content).map { |project| project['name'] }
   end
 
   def statusBar
