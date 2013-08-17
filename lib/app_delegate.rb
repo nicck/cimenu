@@ -26,7 +26,7 @@ class AppDelegate
   end
 
   def preferences(notification)
-    preferencesWindow.display
+    preferencesWindow.orderFrontRegardless
   end
 
   def reDrawMenu(projects)
@@ -50,8 +50,9 @@ class AppDelegate
         defer:false
       window.title = 'Preferences'
       window.level = NSModalPanelWindowLevel
-      # window.delegate = app.delegate
-      window.orderFrontRegardless
+      window.releasedWhenClosed = false
+      # window.delegate = self
+      window
     end
   end
 
