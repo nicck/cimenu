@@ -33,7 +33,7 @@ class TrayMenu < NSMenu
         item.title = truncate(branch['branch_name'], 32)
         item.target = delegate
         item.action = 'quit:'
-        item.image = NSImage.alloc.initWithContentsOfFile "img/icon_branch_success.png"
+        item.image = NSImage.alloc.initWithContentsOfFile "img/icon_branch_#{branch['result']}.png"
 
         addItem(item)
       end
