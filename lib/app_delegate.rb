@@ -1,5 +1,6 @@
 require 'lib/download'
 require 'lib/menu'
+require 'lib/preferences'
 
 class AppDelegate
   AUTH_TOKEN = ENV['SEM_AUTH_TOKEN']
@@ -22,24 +23,14 @@ class AppDelegate
     exit
   end
 
-  def preferences(notification)
-    preferencesWindow.orderFrontRegardless
+  def showPreferences(notification)
+    preferencesWindow.show
   end
 
   private
 
   def preferencesWindow
-    @preferencesWindow ||= begin
-      window = NSWindow.alloc.initWithContentRect [200, 300, 300, 100],
-        styleMask:NSTitledWindowMask|NSClosableWindowMask|NSMiniaturizableWindowMask,
-        backing:NSBackingStoreBuffered,
-        defer:false
-      window.title = 'Preferences'
-      window.level = NSModalPanelWindowLevel
-      window.releasedWhenClosed = false
-      # window.delegate = self
-      window
-    end
+    @preferencesWindow ||= Preferences::Window.new
   end
 
   def fetchProjects

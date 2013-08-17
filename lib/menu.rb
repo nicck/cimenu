@@ -1,3 +1,5 @@
+require 'lib/preferences'
+
 class Menu < NSMenu
   def initialize(delegate)
     @delegate = delegate
@@ -15,7 +17,7 @@ class Menu < NSMenu
       addBranchesFor(project)
     end
 
-    addItem(preferencesItem)
+    addItem(preferencesItem.nsMenuItem)
     addItem(quitItem)
   end
 
@@ -44,12 +46,6 @@ class Menu < NSMenu
   end
 
   def preferencesItem
-    @preferencesItem ||= begin
-      item = NSMenuItem.new
-      item.title = 'Preferences'
-      item.target = delegate
-      item.action = 'preferences:'
-      item
-    end
+    @preferencesItem ||= Preferences::MenuItem.new(delegate)
   end
 end
