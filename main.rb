@@ -4,8 +4,10 @@ class AppDelegate
   def applicationDidFinishLaunching(notification)
     puts 'Hi!'
 
-    statusBar.menu = trayMenu
+    trayMenu.addItem(preferencesItem)
     trayMenu.addItem(quitItem)
+
+    statusBar.menu = trayMenu
   end
 
   def quit(notification)
@@ -13,7 +15,24 @@ class AppDelegate
     exit
   end
 
+  def preferences(notification)
+    preferencesWindow.display
+  end
+
   private
+
+  def preferencesWindow
+    @preferencesWindow ||= begin
+      window = NSWindow.alloc.initWithContentRect [200, 300, 300, 100],
+        styleMask:NSTitledWindowMask|NSClosableWindowMask|NSMiniaturizableWindowMask,
+        backing:NSBackingStoreBuffered,
+        defer:false
+      window.title = 'Preferences'
+      window.level = NSModalPanelWindowLevel
+      # window.delegate = app.delegate
+      window.orderFrontRegardless
+    end
+  end
 
   def statusBar
     @statusBar ||= begin
@@ -39,6 +58,16 @@ class AppDelegate
       item.title = 'Quit'
       item.target = self
       item.action = 'quit:'
+      item
+    end
+  end
+
+  def preferencesItem
+    @preferencesItem ||= begin
+      item = NSMenuItem.new
+      item.title = 'Preferences'
+      item.target = self
+      item.action = 'preferences:'
       item
     end
   end
