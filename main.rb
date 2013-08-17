@@ -19,6 +19,8 @@ class AppDelegate
       trayMenu.addItem(item)
     end
 
+    trayMenu.addItem(NSMenuItem.separatorItem)
+
     trayMenu.addItem(preferencesItem)
     trayMenu.addItem(quitItem)
 
@@ -53,14 +55,11 @@ class AppDelegate
     url = "https://semaphoreapp.com/api/v1/projects?auth_token=#{AUTH_TOKEN}"
 
     url_object = NSURL.URLWithString(url)
-    request = NSMutableURLRequest.requestWithURL(url_object,
-      cachePolicy: NSURLRequestReloadIgnoringCacheData,
-      timeoutInterval: 30.0)
 
-    content = NSMutableString.alloc.initWithContentsOfURL(url_object,
+    response = NSMutableString.alloc.initWithContentsOfURL(url_object,
       encoding:NSUTF8StringEncoding, error:nil)
 
-    JSON.parse(content).map { |project| project['name'] }
+    JSON.parse(response).map { |project| project['name'] }
   end
 
   def statusBar
