@@ -11,13 +11,6 @@ class AppDelegate
     statusBar.menu = trayMenu
 
     fetchProjects
-
-    trayMenu.addItem(NSMenuItem.separatorItem)
-
-    trayMenu.addItem(preferencesItem)
-    trayMenu.addItem(quitItem)
-
-    statusBar.menu = trayMenu
   end
 
   def quit(notification)
@@ -30,14 +23,19 @@ class AppDelegate
   end
 
   def reDrawMenu(projects)
-    projects.each_with_index do |project, index|
+    projects.each do |project|
       item = NSMenuItem.new
       item.title = project['name']
-      item.target = self
-      item.action = 'quit:'
 
-      trayMenu.insertItem(item, atIndex:index)
+      @trayMenu.addItem(item)
+
+      addBranchesFor(project)
     end
+
+    @trayMenu.addItem(NSMenuItem.separatorItem)
+
+    @trayMenu.addItem(preferencesItem)
+    @trayMenu.addItem(quitItem)
   end
 
   private
@@ -62,6 +60,18 @@ class AppDelegate
     request = NSMutableURLRequest.requestWithURL(NSURL.URLWithString(url))
 
     NSURLConnection.connectionWithRequest(request, delegate:ConnectionDelegate.new)
+  end
+
+  def addBranchesFor(project)
+    project['branches'].each do |branch|
+      item = NSMenuItem.new
+      item.title = branch['branch_name']
+      item.target = self
+      item.action = 'quit:'
+      item.image = iconActive
+
+      @trayMenu.addItem(item)
+    end
   end
 
   def statusBar
