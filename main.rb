@@ -1,4 +1,5 @@
 require 'json'
+require 'download'
 
 framework 'AppKit'
 
@@ -12,14 +13,7 @@ class AppDelegate
 
     statusBar.menu = trayMenu
 
-    projects.each do |project|
-      item = NSMenuItem.new
-      item.title = project
-      item.target = self
-      item.action = 'quit:'
-
-      trayMenu.addItem(item)
-    end
+    get_projects
 
     trayMenu.addItem(NSMenuItem.separatorItem)
 
@@ -38,6 +32,17 @@ class AppDelegate
     preferencesWindow.display
   end
 
+  def reDrawMenu(projects)
+    projects.each_with_index do |project, index|
+      item = NSMenuItem.new
+      item.title = project['name']
+      item.target = self
+      item.action = 'quit:'
+
+      trayMenu.insertItem(item, atIndex:index)
+    end
+  end
+
   private
 
   def preferencesWindow
@@ -53,15 +58,12 @@ class AppDelegate
     end
   end
 
-  def projects
+  def get_projects
     url = "https://semaphoreapp.com/api/v1/projects?auth_token=#{AUTH_TOKEN}"
 
-    url_object = NSURL.URLWithString(url)
+    request = NSMutableURLRequest.requestWithURL(NSURL.URLWithString(url))
 
-    response = NSMutableString.alloc.initWithContentsOfURL(url_object,
-      encoding:NSUTF8StringEncoding, error:nil)
-
-    JSON.parse(response).map { |project| project['name'] }
+    Download.new.start(request)
   end
 
   def statusBar
