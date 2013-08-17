@@ -22,10 +22,10 @@ class ConnectionDelegate
     when 200...300
       responseBody = NSString.alloc.initWithData @downloadData,
         encoding:NSUTF8StringEncoding
-      puts "Downloaded!"
 
       json = JSON.parse(responseBody)
-      NSApplication.sharedApplication.delegate.trayMenu.reDraw(json)
+
+      @statusBar.menu.reDraw(json)
     when 300...400
       puts "TODO: Handle redirect!"
     else

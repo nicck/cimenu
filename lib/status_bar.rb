@@ -16,6 +16,10 @@ class StatusBar
     @statusBar.menu = menu
   end
 
+  def menu
+    @statusBar.menu
+  end
+
   def menuWillOpen
     @statusBar.image = iconClicked
   end

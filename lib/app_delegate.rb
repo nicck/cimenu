@@ -1,11 +1,9 @@
-require 'lib/connection_delegate'
 require 'lib/tray_menu'
 require 'lib/preferences'
 require 'lib/status_bar'
+require 'lib/data_fetcher'
 
 class AppDelegate
-  AUTH_TOKEN = ENV['SEM_AUTH_TOKEN']
-
   attr_reader :trayMenu
 
   def applicationDidFinishLaunching(notification)
@@ -14,7 +12,8 @@ class AppDelegate
     @trayMenu = TrayMenu.new(self)
     statusBar.menu = @trayMenu
 
-    fetchProjects
+    dataFetcher = DataFetcher.new(statusBar)
+    dataFetcher.start
   end
 
   def quit(notification)
@@ -38,15 +37,6 @@ class AppDelegate
 
   def preferencesWindow
     @preferencesWindow ||= Preferences::Window.new
-  end
-
-  def fetchProjects
-    url = "https://semaphoreapp.com/api/v1/projects?auth_token=#{AUTH_TOKEN}"
-
-    request = NSMutableURLRequest.requestWithURL(NSURL.URLWithString(url))
-
-    NSURLConnection.connectionWithRequest(request,
-      delegate:ConnectionDelegate.new(statusBar))
   end
 
   def statusBar
