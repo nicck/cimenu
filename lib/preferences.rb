@@ -1,14 +1,9 @@
 module Preferences
-  class MenuItem
+  class MenuItem < NSMenuItem
     def initialize(delegate)
-      @item = NSMenuItem.new
-      @item.title = 'Preferences...'
-      @item.target = delegate
-      @item.action = 'showPreferences:'
-    end
-
-    def nsMenuItem
-      @item
+      self.title = 'Preferences...'
+      self.target = delegate
+      self.action = 'showPreferences:'
     end
   end
 

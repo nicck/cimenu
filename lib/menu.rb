@@ -17,7 +17,7 @@ class Menu < NSMenu
       addBranchesFor(project)
     end
 
-    addItem(preferencesItem.nsMenuItem)
+    addItem(preferencesItem)
     addItem(quitItem)
   end
 
