@@ -13,7 +13,8 @@ class AppDelegate
     statusBar.menu = @trayMenu
 
     dataFetcher = DataFetcher.new(statusBar)
-    dataFetcher.start
+    # dataFetcher.fetch
+    dataFetcher.startTimer
   end
 
   def quit(notification)
