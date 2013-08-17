@@ -8,6 +8,8 @@ class AppDelegate
   def applicationDidFinishLaunching(notification)
     puts 'Hi!'
 
+    @iconActive = NSImage.alloc.initWithContentsOfFile "img/icon_offline@2x.png"
+
     statusBar.menu = trayMenu
 
     projects.each do |project|
@@ -78,8 +80,25 @@ class AppDelegate
   def trayMenu
     @trayMenu ||= begin
       menu = NSMenu.new
+      menu.delegate = self
       menu
     end
+  end
+
+  def iconActive
+    @iconActive
+  end
+
+  def iconClicked
+    @iconClicked ||= NSImage.alloc.initWithContentsOfFile "img/icon_clicked@2x.png"
+  end
+
+  def menuWillOpen(notification)
+    statusBar.image = iconClicked
+  end
+
+  def menuDidClose(notification)
+    statusBar.image = iconActive
   end
 
   def quitItem
