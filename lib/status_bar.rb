@@ -36,7 +36,7 @@ class StatusBar
   def stopAnimation
     p 'stopAnimation'
     @animationTimer.invalidate && @animationTimer = nil if @animationTimer
-    @statusBar.image = iconOffline
+    self.iconActive = @statusBar.image
   end
 
   def updateImage(timer)
@@ -54,8 +54,12 @@ class StatusBar
     NSImage.alloc.initWithContentsOfFile "img/animation/#{frame}.png"
   end
 
+  def iconActive=(icon)
+    @iconActive = icon
+  end
+
   def iconActive
-    @iconActive ||= NSImage.alloc.initWithContentsOfFile "img/icon_offline@2x.png"
+    @iconActive ||= iconOffline
   end
 
   def iconClicked
