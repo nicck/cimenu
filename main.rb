@@ -64,10 +64,12 @@ class AppDelegate
 
   def statusBar
     @statusBar ||= begin
+      image = NSImage.alloc.initWithContentsOfFile "img/icon_offline@2x.png"
+
       statusBar = NSStatusBar
         .systemStatusBar
         .statusItemWithLength(NSVariableStatusItemLength)
-      statusBar.title = "CI Menu"
+      statusBar.image = image
       statusBar.highlightMode = true
       statusBar
     end
