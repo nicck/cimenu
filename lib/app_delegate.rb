@@ -17,6 +17,8 @@ class AppDelegate
     dataFetcher = DataFetcher.new(statusBar)
     dataFetcher.fetch
     dataFetcher.startTimer
+
+    fetchProjects
   end
 
   def quit(notification)
