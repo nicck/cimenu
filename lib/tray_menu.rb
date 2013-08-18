@@ -27,7 +27,7 @@ class TrayMenu < NSMenu
 
   def addBranchesFor(project)
     project['branches'].each do |branch|
-      if Time.parse(branch['finished_at']) > 2.days.ago
+      if branch['finished_at'].nil? || Time.parse(branch['finished_at']) > 2.days.ago
         item = NSMenuItem.new
 
         item.title = truncate(branch['branch_name'], 32)
