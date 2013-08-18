@@ -1,0 +1,17 @@
+.download, .fork {
+  width: 50%;
+  float: left;
+}
+
+.download-fork {
+  padding: 3em 0 10em;
+  
+  h2 {
+    font-size: 3em;
+    font-weight: 400;
+  }
+
+  a {
+    margin-top: .7em;
+  }
+}

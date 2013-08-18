@@ -1,0 +1,56 @@
+/* ==========================================================================
+   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   ========================================================================== */
+@import 'normalize';
+@import 'icons';
+@import 'intro';
+@import 'features';
+@import 'download';
+@import 'upcoming';
+
+body {
+  font-size: 1em;
+  line-height: 1.3;
+  background: #fff;
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+  height: 100%;
+  font-weight: 300;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+::-moz-selection,
+::selection {
+  text-shadow: none;
+}
+
+p, ul {
+  font-size: 2em;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.wrap {
+  max-width: 88em;
+  text-align: left;
+  margin: auto;
+  overflow: hidden;
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
