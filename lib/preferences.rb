@@ -22,7 +22,7 @@ module Preferences
 
   class Window
     def initialize
-      frame = [450, 450, 550, 100]
+      frame = [300, 450, 700, 100]
       @window = NSWindow.alloc.initWithContentRect frame,
           styleMask:NSTitledWindowMask|NSClosableWindowMask|NSMiniaturizableWindowMask,
           backing:NSBackingStoreBuffered,
@@ -42,7 +42,7 @@ module Preferences
       apiKeyLabel.drawsBackground = false
       apiKeyLabel.stringValue = 'Api Token:'
 
-      descriptionLabel = NSTextField.alloc.initWithFrame([230, 25, 500, 40])
+      descriptionLabel = NSTextField.alloc.initWithFrame([330, 25, 500, 40])
       descriptionLabel.editable = false
       descriptionLabel.selectable = false
       descriptionLabel.bezeled = false
@@ -53,7 +53,7 @@ module Preferences
       @window.contentView.addSubview(apiKeyLabel)
       @window.contentView.addSubview(descriptionLabel)
 
-      apiKeyTextField = ApiTextField.alloc.initWithFrame([100, 40, 120, 20])
+      apiKeyTextField = ApiTextField.alloc.initWithFrame([100, 40, 220, 20])
       @window.contentView.addSubview(apiKeyTextField)
     end
 
