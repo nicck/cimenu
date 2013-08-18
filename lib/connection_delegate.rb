@@ -20,12 +20,8 @@ class ConnectionDelegate
 
     case @response.statusCode
     when 200...300
-      @statusBar.image = @statusBar.iconActive
-
       responseBody = NSString.alloc.initWithData @downloadData,
         encoding:NSUTF8StringEncoding
-
-      json = JSON.parse(responseBody)
 
       begin
         json = JSON.parse(responseBody)
