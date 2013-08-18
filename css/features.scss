@@ -1,3 +1,22 @@
 .features {
   padding: 5em 0;
+  
+  h3 {
+    padding-top: 1em;
+  }
+  
+  ul {
+    padding-left: .3em;
+    
+    li {
+      margin-bottom: .5em;
+      
+      &:before {
+        color: #fac45c;
+        content: '\e800';
+        font-family: 'icons-cimenu';
+        padding-right: .5em;
+      }
+    }
+  }
 }

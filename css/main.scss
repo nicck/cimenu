@@ -34,10 +34,22 @@ img {
 }
 
 .wrap {
-  max-width: 88em;
-  text-align: left;
+  max-width: 62em;
   margin: auto;
   overflow: hidden;
+  
+  ul {
+    text-align: left;
+    width: 16em;
+    margin: auto;
+    padding-left: 0.5em;
+  }
+
+  h3 {
+    text-align: left;
+    width: 11em;
+    margin: 0 auto .5em;
+  }
 }
 
 .cf:before,

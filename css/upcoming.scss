@@ -1,4 +1,12 @@
 .upcoming-updates {
   background: #eceef1;
   padding: 5em 0 8em;
+  
+  li {
+     &:before {
+      font-family: 'icons-cimenu';
+      content: '\e803';
+      padding-right: 0.5em;
+     }
+  }
 }
