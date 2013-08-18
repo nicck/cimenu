@@ -1,18 +1,19 @@
 require 'lib/connection_delegate'
 
-AUTH_TOKEN = ENV['SEM_AUTH_TOKEN']
-
 class DataFetcher
   INTERVAL = 15
 
   def initialize(statusBar)
     @statusBar = statusBar
-    @url = "https://semaphoreapp.com/api/v1/projects?auth_token=#{AUTH_TOKEN}"
+    @url = "https://semaphoreapp.com/api/v1/projects?auth_token="
   end
 
   def fetch(timer = nil)
-    p 'fetching'
-    request = NSMutableURLRequest.requestWithURL(NSURL.URLWithString(@url))
+    defaults = NSUserDefaults.standardUserDefaults
+    api_key = defaults.objectForKey('org.cimenu.apikey')
+
+    p "fetching with #{api_key}"
+    request = NSMutableURLRequest.requestWithURL(NSURL.URLWithString("#{@url}#{api_key}"))
     NSURLConnection.connectionWithRequest(request,
       delegate:ConnectionDelegate.new(@statusBar))
   end

@@ -17,14 +17,12 @@ module Preferences
       defaults.setObject(api_key, forKey: 'org.cimenu.apikey')
 
       defaults.synchronize
-
-      NSApplication.sharedApplication.delegate.fetchProjects(api_key)
     end
   end
 
   class Window
     def initialize
-      frame = [200, 300, 550, 100]
+      frame = [450, 450, 550, 100]
       @window = NSWindow.alloc.initWithContentRect frame,
           styleMask:NSTitledWindowMask|NSClosableWindowMask|NSMiniaturizableWindowMask,
           backing:NSBackingStoreBuffered,
