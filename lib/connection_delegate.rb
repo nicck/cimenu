@@ -27,8 +27,16 @@ class ConnectionDelegate
 
       json = JSON.parse(responseBody)
 
+      begin
+        json = JSON.parse(responseBody)
+      rescue Exception
+        NSApplication.sharedApplication.delegate.showPreferences(nil)
+        return
+      end
+
       @statusBar.trayMenu.reDraw(json)
       @statusBar.updateIconWithData(json)
+
     when 300...400
       puts "TODO: Handle redirect!"
     else

@@ -9,7 +9,16 @@ module Preferences
 
   class ApiTextField < NSTextField
     def textDidChange(notification)
-      puts 'test'
+      save_api_key(stringValue)
+    end
+
+    def save_api_key(api_key)
+      defaults = NSUserDefaults.standardUserDefaults
+      defaults.setObject(api_key, forKey: 'org.cimenu.apikey')
+
+      defaults.synchronize
+
+      NSApplication.sharedApplication.delegate.fetchProjects(api_key)
     end
   end
 
