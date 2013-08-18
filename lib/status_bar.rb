@@ -29,14 +29,16 @@ class StatusBar
   end
 
   def startAnimation
-    @animationFrame = 0
-    @animationTimer = NSTimer.scheduledTimerWithTimeInterval 0.02,
-      target:self,
-      selector:'updateImage:',
-      userInfo:nil,
-      repeats:true
+    unless @animationTimer
+      @animationFrame = 0
+      @animationTimer = NSTimer.scheduledTimerWithTimeInterval 0.02,
+        target:self,
+        selector:'updateImage:',
+        userInfo:nil,
+        repeats:true
 
-    NSRunLoop.mainRunLoop.addTimer(@animationTimer, forMode:NSRunLoopCommonModes)
+      NSRunLoop.mainRunLoop.addTimer(@animationTimer, forMode:NSRunLoopCommonModes)
+    end
   end
 
   def stopAnimation
@@ -46,8 +48,20 @@ class StatusBar
   end
 
   def updateImage(timer)
-    @statusBar.image = iconOfflineForFrame(@animationFrame)
+    @statusBar.image = iconActiveForFrame(@animationFrame)
     @animationFrame = (@animationFrame == 9) ? 1 : @animationFrame + 1
+  end
+
+  def updateIconWithData(projects)
+    pending = projects.any? do |project|
+      branches = project['branches'] || []
+      branches.any? do |branch|
+        ('master' == branch['branch_name']) &&
+        ('pending' == branch['result'])
+      end
+    end
+
+    pending ? startAnimation : stopAnimation
   end
 
   private
@@ -56,7 +70,7 @@ class StatusBar
     @iconOffline ||= NSImage.alloc.initWithContentsOfFile "img/icon_offline@2x.png"
   end
 
-  def iconOfflineForFrame(frame)
+  def iconActiveForFrame(frame)
     NSImage.alloc.initWithContentsOfFile "img/animation/#{frame}.png"
   end
 

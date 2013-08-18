@@ -3,7 +3,7 @@ require 'json'
 class ConnectionDelegate
   def initialize(statusBar)
     @statusBar = statusBar
-    @statusBar.startAnimation
+    # @statusBar.startAnimation
   end
 
   def connection(connection, didReceiveResponse:response)
@@ -16,19 +16,23 @@ class ConnectionDelegate
   end
 
   def connectionDidFinishLoading(connection)
-    @statusBar.stopAnimation
+    # @statusBar.stopAnimation
 
     case @response.statusCode
     when 200...300
+      @statusBar.image = @statusBar.iconActive
+
       responseBody = NSString.alloc.initWithData @downloadData,
         encoding:NSUTF8StringEncoding
 
       json = JSON.parse(responseBody)
 
       @statusBar.trayMenu.reDraw(json)
+      @statusBar.updateIconWithData(json)
     when 300...400
       puts "TODO: Handle redirect!"
     else
+      @statusBar.image = @statusBar.iconOffline
       puts "Oh noes, an error occurred: #{@response.statusCode}"
     end
   end
