@@ -1,5 +1,3 @@
-require 'lib/connection_delegate'
-
 class DataFetcher
   INTERVAL = 15
 

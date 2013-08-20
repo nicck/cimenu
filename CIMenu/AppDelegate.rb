@@ -1,8 +1,3 @@
-require 'lib/tray_menu'
-require 'lib/preferences'
-require 'lib/status_bar'
-require 'lib/data_fetcher'
-
 class AppDelegate
   attr_reader :trayMenu
 

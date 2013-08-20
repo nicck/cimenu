@@ -1,6 +1,4 @@
 require 'time'
-require 'ext/fixnum'
-require 'lib/preferences'
 
 class TrayMenu < NSMenu
   def initialize(delegate)
@@ -33,7 +31,7 @@ class TrayMenu < NSMenu
         item.title = truncate(branch['branch_name'], 32)
         item.target = delegate
         item.action = 'quit:'
-        item.image = NSImage.alloc.initWithContentsOfFile "img/icon_branch_#{branch['result']}.png"
+        item.image = NSImage.imageNamed "build_#{branch['result']}.png"
 
         addItem(item)
       end

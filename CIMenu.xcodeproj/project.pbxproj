@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A50C873917C2ACDD00BD8792 /* ConnectionDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C873817C2ACDD00BD8792 /* ConnectionDelegate.rb */; };
+		A50C873B17C2AD2B00BD8792 /* DataFetcher.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C873A17C2AD2B00BD8792 /* DataFetcher.rb */; };
+		A50C873D17C2AD3C00BD8792 /* Preferences.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C873C17C2AD3C00BD8792 /* Preferences.rb */; };
+		A50C873F17C2AD4C00BD8792 /* StatusBar.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C873E17C2AD4C00BD8792 /* StatusBar.rb */; };
+		A50C874117C2AD6700BD8792 /* TrayMenu.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C874017C2AD6700BD8792 /* TrayMenu.rb */; };
+		A50C874317C2ADDC00BD8792 /* ExtFixnum.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C874217C2ADDC00BD8792 /* ExtFixnum.rb */; };
+		A59D3F6117C2A34000988430 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59D3F6017C2A34000988430 /* Cocoa.framework */; };
+		A59D3F6317C2A34000988430 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59D3F6217C2A34000988430 /* MacRuby.framework */; };
+		A59D3F6C17C2A34000988430 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A59D3F6A17C2A34000988430 /* InfoPlist.strings */; };
+		A59D3F6E17C2A34000988430 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A59D3F6D17C2A34000988430 /* main.m */; };
+		A59D3F7317C2A34100988430 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A59D3F7117C2A34100988430 /* MainMenu.xib */; };
+		A59D3F7617C2A34100988430 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = A59D3F7517C2A34100988430 /* rb_main.rb */; };
+		A59D3F7817C2A34100988430 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = A59D3F7717C2A34100988430 /* AppDelegate.rb */; };
+		A5BA2DEE17C2B4EF009CB2CB /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DDE17C2B4EF009CB2CB /* 1.png */; };
+		A5BA2DEF17C2B4EF009CB2CB /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DDF17C2B4EF009CB2CB /* 2.png */; };
+		A5BA2DF017C2B4EF009CB2CB /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DE017C2B4EF009CB2CB /* 3.png */; };
+		A5BA2DF117C2B4EF009CB2CB /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DE117C2B4EF009CB2CB /* 4.png */; };
+		A5BA2DF217C2B4EF009CB2CB /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DE217C2B4EF009CB2CB /* 5.png */; };
+		A5BA2DF317C2B4EF009CB2CB /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DE317C2B4EF009CB2CB /* 6.png */; };
+		A5BA2DF417C2B4EF009CB2CB /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DE417C2B4EF009CB2CB /* 7.png */; };
+		A5BA2DF517C2B4EF009CB2CB /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DE517C2B4EF009CB2CB /* 8.png */; };
+		A5BA2DF617C2B4EF009CB2CB /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DE617C2B4EF009CB2CB /* 9.png */; };
+		A5BA2DF717C2B4EF009CB2CB /* build_pending.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DE717C2B4EF009CB2CB /* build_pending.png */; };
+		A5BA2DF817C2B4EF009CB2CB /* build_failed.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DE817C2B4EF009CB2CB /* build_failed.png */; };
+		A5BA2DF917C2B4EF009CB2CB /* build_passed.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DE917C2B4EF009CB2CB /* build_passed.png */; };
+		A5BA2DFA17C2B4EF009CB2CB /* gear_clicked.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DEA17C2B4EF009CB2CB /* gear_clicked.png */; };
+		A5BA2DFB17C2B4EF009CB2CB /* gear_offline.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DEB17C2B4EF009CB2CB /* gear_offline.png */; };
+		A5BA2DFC17C2B4EF009CB2CB /* token_invalid.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DEC17C2B4EF009CB2CB /* token_invalid.png */; };
+		A5BA2DFD17C2B4EF009CB2CB /* token_valid.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DED17C2B4EF009CB2CB /* token_valid.png */; };
+		A5BA2DFF17C2BC9D009CB2CB /* CIMenu.icns in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DFE17C2BC9D009CB2CB /* CIMenu.icns */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A59D3F6517C2A34000988430 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A59D3F5517C2A34000988430 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A59D3F5C17C2A34000988430;
+			remoteInfo = CIMenu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A50C873817C2ACDD00BD8792 /* ConnectionDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ConnectionDelegate.rb; sourceTree = "<group>"; };
+		A50C873A17C2AD2B00BD8792 /* DataFetcher.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = DataFetcher.rb; sourceTree = "<group>"; };
+		A50C873C17C2AD3C00BD8792 /* Preferences.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Preferences.rb; sourceTree = "<group>"; };
+		A50C873E17C2AD4C00BD8792 /* StatusBar.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = StatusBar.rb; sourceTree = "<group>"; };
+		A50C874017C2AD6700BD8792 /* TrayMenu.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = TrayMenu.rb; sourceTree = "<group>"; };
+		A50C874217C2ADDC00BD8792 /* ExtFixnum.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ExtFixnum.rb; sourceTree = "<group>"; };
+		A59D3F5D17C2A34000988430 /* CIMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A59D3F6017C2A34000988430 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A59D3F6217C2A34000988430 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
+		A59D3F6917C2A34000988430 /* CIMenu-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CIMenu-Info.plist"; sourceTree = "<group>"; };
+		A59D3F6B17C2A34000988430 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A59D3F6D17C2A34000988430 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A59D3F6F17C2A34000988430 /* CIMenu-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CIMenu-Prefix.pch"; sourceTree = "<group>"; };
+		A59D3F7217C2A34100988430 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A59D3F7517C2A34100988430 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
+		A59D3F7717C2A34100988430 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
+		A5BA2DDE17C2B4EF009CB2CB /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		A5BA2DDF17C2B4EF009CB2CB /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		A5BA2DE017C2B4EF009CB2CB /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		A5BA2DE117C2B4EF009CB2CB /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		A5BA2DE217C2B4EF009CB2CB /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		A5BA2DE317C2B4EF009CB2CB /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		A5BA2DE417C2B4EF009CB2CB /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
+		A5BA2DE517C2B4EF009CB2CB /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
+		A5BA2DE617C2B4EF009CB2CB /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
+		A5BA2DE717C2B4EF009CB2CB /* build_pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = build_pending.png; sourceTree = "<group>"; };
+		A5BA2DE817C2B4EF009CB2CB /* build_failed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = build_failed.png; sourceTree = "<group>"; };
+		A5BA2DE917C2B4EF009CB2CB /* build_passed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = build_passed.png; sourceTree = "<group>"; };
+		A5BA2DEA17C2B4EF009CB2CB /* gear_clicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear_clicked.png; sourceTree = "<group>"; };
+		A5BA2DEB17C2B4EF009CB2CB /* gear_offline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear_offline.png; sourceTree = "<group>"; };
+		A5BA2DEC17C2B4EF009CB2CB /* token_invalid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = token_invalid.png; sourceTree = "<group>"; };
+		A5BA2DED17C2B4EF009CB2CB /* token_valid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = token_valid.png; sourceTree = "<group>"; };
+		A5BA2DFE17C2BC9D009CB2CB /* CIMenu.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = CIMenu.icns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A59D3F5A17C2A34000988430 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A59D3F6117C2A34000988430 /* Cocoa.framework in Frameworks */,
+				A59D3F6317C2A34000988430 /* MacRuby.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A50C874417C2B31800BD8792 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A5BA2DDD17C2B4EF009CB2CB /* animation */,
+				A5BA2DE717C2B4EF009CB2CB /* build_pending.png */,
+				A5BA2DE817C2B4EF009CB2CB /* build_failed.png */,
+				A5BA2DE917C2B4EF009CB2CB /* build_passed.png */,
+				A5BA2DEA17C2B4EF009CB2CB /* gear_clicked.png */,
+				A5BA2DEB17C2B4EF009CB2CB /* gear_offline.png */,
+				A5BA2DEC17C2B4EF009CB2CB /* token_invalid.png */,
+				A5BA2DED17C2B4EF009CB2CB /* token_valid.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		A59D3F5417C2A34000988430 = {
+			isa = PBXGroup;
+			children = (
+				A5BA2DFE17C2BC9D009CB2CB /* CIMenu.icns */,
+				A59D3F6717C2A34000988430 /* CIMenu */,
+				A59D3F5F17C2A34000988430 /* Frameworks */,
+				A59D3F5E17C2A34000988430 /* Products */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+		};
+		A59D3F5E17C2A34000988430 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A59D3F5D17C2A34000988430 /* CIMenu.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A59D3F5F17C2A34000988430 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A59D3F6017C2A34000988430 /* Cocoa.framework */,
+				A59D3F6217C2A34000988430 /* MacRuby.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A59D3F6717C2A34000988430 /* CIMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A50C874417C2B31800BD8792 /* Images */,
+				A59D3F7017C2A34100988430 /* Resources */,
+				A59D3F7417C2A34100988430 /* Other Sources */,
+				A59D3F6817C2A34000988430 /* Supporting Files */,
+				A59D3F7717C2A34100988430 /* AppDelegate.rb */,
+				A50C873817C2ACDD00BD8792 /* ConnectionDelegate.rb */,
+				A50C873A17C2AD2B00BD8792 /* DataFetcher.rb */,
+				A50C873C17C2AD3C00BD8792 /* Preferences.rb */,
+				A50C873E17C2AD4C00BD8792 /* StatusBar.rb */,
+				A50C874017C2AD6700BD8792 /* TrayMenu.rb */,
+				A50C874217C2ADDC00BD8792 /* ExtFixnum.rb */,
+			);
+			path = CIMenu;
+			sourceTree = "<group>";
+		};
+		A59D3F6817C2A34000988430 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A59D3F6917C2A34000988430 /* CIMenu-Info.plist */,
+				A59D3F6A17C2A34000988430 /* InfoPlist.strings */,
+				A59D3F6D17C2A34000988430 /* main.m */,
+				A59D3F6F17C2A34000988430 /* CIMenu-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A59D3F7017C2A34100988430 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A59D3F7117C2A34100988430 /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A59D3F7417C2A34100988430 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A59D3F7517C2A34100988430 /* rb_main.rb */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		A5BA2DDD17C2B4EF009CB2CB /* animation */ = {
+			isa = PBXGroup;
+			children = (
+				A5BA2DDE17C2B4EF009CB2CB /* 1.png */,
+				A5BA2DDF17C2B4EF009CB2CB /* 2.png */,
+				A5BA2DE017C2B4EF009CB2CB /* 3.png */,
+				A5BA2DE117C2B4EF009CB2CB /* 4.png */,
+				A5BA2DE217C2B4EF009CB2CB /* 5.png */,
+				A5BA2DE317C2B4EF009CB2CB /* 6.png */,
+				A5BA2DE417C2B4EF009CB2CB /* 7.png */,
+				A5BA2DE517C2B4EF009CB2CB /* 8.png */,
+				A5BA2DE617C2B4EF009CB2CB /* 9.png */,
+			);
+			path = animation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		A59D3F6417C2A34000988430 /* Deployment */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "--compile --embed";
+			buildConfigurationList = A59D3F7E17C2A34100988430 /* Build configuration list for PBXLegacyTarget "Deployment" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/local/bin/macruby_deploy;
+			dependencies = (
+				A59D3F6617C2A34000988430 /* PBXTargetDependency */,
+			);
+			name = Deployment;
+			passBuildSettingsInEnvironment = 1;
+			productName = Deployment;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		A59D3F5C17C2A34000988430 /* CIMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A59D3F7B17C2A34100988430 /* Build configuration list for PBXNativeTarget "CIMenu" */;
+			buildPhases = (
+				A59D3F5917C2A34000988430 /* Sources */,
+				A59D3F5A17C2A34000988430 /* Frameworks */,
+				A59D3F5B17C2A34000988430 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CIMenu;
+			productName = CIMenu;
+			productReference = A59D3F5D17C2A34000988430 /* CIMenu.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A59D3F5517C2A34000988430 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = CIMenu;
+			};
+			buildConfigurationList = A59D3F5817C2A34000988430 /* Build configuration list for PBXProject "CIMenu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A59D3F5417C2A34000988430;
+			productRefGroup = A59D3F5E17C2A34000988430 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A59D3F5C17C2A34000988430 /* CIMenu */,
+				A59D3F6417C2A34000988430 /* Deployment */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A59D3F5B17C2A34000988430 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A59D3F6C17C2A34000988430 /* InfoPlist.strings in Resources */,
+				A59D3F7317C2A34100988430 /* MainMenu.xib in Resources */,
+				A59D3F7617C2A34100988430 /* rb_main.rb in Resources */,
+				A59D3F7817C2A34100988430 /* AppDelegate.rb in Resources */,
+				A50C873917C2ACDD00BD8792 /* ConnectionDelegate.rb in Resources */,
+				A50C873B17C2AD2B00BD8792 /* DataFetcher.rb in Resources */,
+				A50C873D17C2AD3C00BD8792 /* Preferences.rb in Resources */,
+				A50C873F17C2AD4C00BD8792 /* StatusBar.rb in Resources */,
+				A50C874117C2AD6700BD8792 /* TrayMenu.rb in Resources */,
+				A50C874317C2ADDC00BD8792 /* ExtFixnum.rb in Resources */,
+				A5BA2DEE17C2B4EF009CB2CB /* 1.png in Resources */,
+				A5BA2DEF17C2B4EF009CB2CB /* 2.png in Resources */,
+				A5BA2DF017C2B4EF009CB2CB /* 3.png in Resources */,
+				A5BA2DF117C2B4EF009CB2CB /* 4.png in Resources */,
+				A5BA2DF217C2B4EF009CB2CB /* 5.png in Resources */,
+				A5BA2DF317C2B4EF009CB2CB /* 6.png in Resources */,
+				A5BA2DF417C2B4EF009CB2CB /* 7.png in Resources */,
+				A5BA2DF517C2B4EF009CB2CB /* 8.png in Resources */,
+				A5BA2DF617C2B4EF009CB2CB /* 9.png in Resources */,
+				A5BA2DF717C2B4EF009CB2CB /* build_pending.png in Resources */,
+				A5BA2DF817C2B4EF009CB2CB /* build_failed.png in Resources */,
+				A5BA2DF917C2B4EF009CB2CB /* build_passed.png in Resources */,
+				A5BA2DFA17C2B4EF009CB2CB /* gear_clicked.png in Resources */,
+				A5BA2DFB17C2B4EF009CB2CB /* gear_offline.png in Resources */,
+				A5BA2DFC17C2B4EF009CB2CB /* token_invalid.png in Resources */,
+				A5BA2DFD17C2B4EF009CB2CB /* token_valid.png in Resources */,
+				A5BA2DFF17C2BC9D009CB2CB /* CIMenu.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A59D3F5917C2A34000988430 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A59D3F6E17C2A34000988430 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A59D3F6617C2A34000988430 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A59D3F5C17C2A34000988430 /* CIMenu */;
+			targetProxy = A59D3F6517C2A34000988430 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A59D3F6A17C2A34000988430 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A59D3F6B17C2A34000988430 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A59D3F7117C2A34100988430 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A59D3F7217C2A34100988430 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A59D3F7917C2A34100988430 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A59D3F7A17C2A34100988430 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A59D3F7C17C2A34100988430 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = x86_64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+					/Library/Frameworks,
+				);
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CIMenu/CIMenu-Prefix.pch";
+				INFOPLIST_FILE = "CIMenu/CIMenu-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A59D3F7D17C2A34100988430 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = x86_64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+					/Library/Frameworks,
+				);
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CIMenu/CIMenu-Prefix.pch";
+				INFOPLIST_FILE = "CIMenu/CIMenu-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A59D3F7F17C2A34100988430 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		A59D3F8017C2A34100988430 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A59D3F5817C2A34000988430 /* Build configuration list for PBXProject "CIMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A59D3F7917C2A34100988430 /* Debug */,
+				A59D3F7A17C2A34100988430 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A59D3F7B17C2A34100988430 /* Build configuration list for PBXNativeTarget "CIMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A59D3F7C17C2A34100988430 /* Debug */,
+				A59D3F7D17C2A34100988430 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A59D3F7E17C2A34100988430 /* Build configuration list for PBXLegacyTarget "Deployment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A59D3F7F17C2A34100988430 /* Debug */,
+				A59D3F8017C2A34100988430 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A59D3F5517C2A34000988430 /* Project object */;
+}

@@ -67,11 +67,11 @@ class StatusBar
   private
 
   def iconOffline
-    @iconOffline ||= NSImage.alloc.initWithContentsOfFile "img/icon_offline@2x.png"
+    @iconOffline ||= NSImage.imageNamed "gear_offline.png"
   end
 
   def iconActiveForFrame(frame)
-    NSImage.alloc.initWithContentsOfFile "img/animation/#{frame}.png"
+    NSImage.imageNamed "#{frame}.png"
   end
 
   def iconActive=(icon)
@@ -83,6 +83,6 @@ class StatusBar
   end
 
   def iconClicked
-    @iconClicked ||= NSImage.alloc.initWithContentsOfFile "img/icon_clicked@2x.png"
+    @iconClicked ||= NSImage.imageNamed "gear_clicked.png"
   end
 end
