@@ -1,5 +1,6 @@
 class AppDelegate
   attr_reader :trayMenu
+  attr_accessor :preferencesWindow
 
   def applicationDidFinishLaunching(notification)
     puts 'Hi!'
@@ -20,8 +21,18 @@ class AppDelegate
   end
 
   def showPreferences(notification)
-    preferencesWindow.show
+    preferencesWindow.makeKeyAndOrderFront(self)
   end
+
+  def controlTextDidChange(notification)
+    value = notification.object.stringValue
+    p "controlTextDidChange: " << value
+    saveApiKey value
+  end
+
+#  def controlTextDidEndEditing(notification)
+#    p "controlTextDidEndEditing: " << notification.object.stringValue
+#  end
 
   def menuWillOpen(notification)
     statusBar.menuWillOpen
@@ -33,8 +44,10 @@ class AppDelegate
 
   private
 
-  def preferencesWindow
-    @preferencesWindow ||= Preferences::Window.new
+  def saveApiKey(apiKey)
+    defaults = NSUserDefaults.standardUserDefaults
+    defaults.setObject(apiKey, forKey: 'org.cimenu.apikey')
+    defaults.synchronize
   end
 
   def statusBar

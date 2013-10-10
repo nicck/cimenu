@@ -8,10 +8,10 @@ class DataFetcher
 
   def fetch(timer = nil)
     defaults = NSUserDefaults.standardUserDefaults
-    api_key = defaults.objectForKey('org.cimenu.apikey')
+    apiKey = defaults.objectForKey('org.cimenu.apikey')
 
-    p "fetching with #{api_key}"
-    request = NSMutableURLRequest.requestWithURL(NSURL.URLWithString("#{@url}#{api_key}"))
+    p "fetching with #{apiKey}"
+    request = NSMutableURLRequest.requestWithURL(NSURL.URLWithString("#{@url}#{apiKey}"))
     NSURLConnection.connectionWithRequest(request,
       delegate:ConnectionDelegate.new(@statusBar))
   end

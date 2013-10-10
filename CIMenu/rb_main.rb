@@ -17,9 +17,4 @@ Dir.glob(File.join(dir_path, '*.{rb,rbo}'))
   end
 
 # Starting the Cocoa main loop.
-# NSApplicationMain(0, nil)
-
-app = NSApplication.sharedApplication
-app.delegate = AppDelegate.new
-app.activationPolicy = NSApplicationActivationPolicyRegular
-app.run
+NSApplicationMain(0, nil)

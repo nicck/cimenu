@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A50C873917C2ACDD00BD8792 /* ConnectionDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C873817C2ACDD00BD8792 /* ConnectionDelegate.rb */; };
 		A50C873B17C2AD2B00BD8792 /* DataFetcher.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C873A17C2AD2B00BD8792 /* DataFetcher.rb */; };
-		A50C873D17C2AD3C00BD8792 /* Preferences.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C873C17C2AD3C00BD8792 /* Preferences.rb */; };
 		A50C873F17C2AD4C00BD8792 /* StatusBar.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C873E17C2AD4C00BD8792 /* StatusBar.rb */; };
 		A50C874117C2AD6700BD8792 /* TrayMenu.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C874017C2AD6700BD8792 /* TrayMenu.rb */; };
 		A50C874317C2ADDC00BD8792 /* ExtFixnum.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C874217C2ADDC00BD8792 /* ExtFixnum.rb */; };
@@ -52,7 +51,6 @@
 /* Begin PBXFileReference section */
 		A50C873817C2ACDD00BD8792 /* ConnectionDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ConnectionDelegate.rb; sourceTree = "<group>"; };
 		A50C873A17C2AD2B00BD8792 /* DataFetcher.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = DataFetcher.rb; sourceTree = "<group>"; };
-		A50C873C17C2AD3C00BD8792 /* Preferences.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Preferences.rb; sourceTree = "<group>"; };
 		A50C873E17C2AD4C00BD8792 /* StatusBar.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = StatusBar.rb; sourceTree = "<group>"; };
 		A50C874017C2AD6700BD8792 /* TrayMenu.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = TrayMenu.rb; sourceTree = "<group>"; };
 		A50C874217C2ADDC00BD8792 /* ExtFixnum.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ExtFixnum.rb; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 				A59D3F7717C2A34100988430 /* AppDelegate.rb */,
 				A50C873817C2ACDD00BD8792 /* ConnectionDelegate.rb */,
 				A50C873A17C2AD2B00BD8792 /* DataFetcher.rb */,
-				A50C873C17C2AD3C00BD8792 /* Preferences.rb */,
 				A50C873E17C2AD4C00BD8792 /* StatusBar.rb */,
 				A50C874017C2AD6700BD8792 /* TrayMenu.rb */,
 				A50C874217C2ADDC00BD8792 /* ExtFixnum.rb */,
@@ -278,7 +275,6 @@
 				A59D3F7817C2A34100988430 /* AppDelegate.rb in Resources */,
 				A50C873917C2ACDD00BD8792 /* ConnectionDelegate.rb in Resources */,
 				A50C873B17C2AD2B00BD8792 /* DataFetcher.rb in Resources */,
-				A50C873D17C2AD3C00BD8792 /* Preferences.rb in Resources */,
 				A50C873F17C2AD4C00BD8792 /* StatusBar.rb in Resources */,
 				A50C874117C2AD6700BD8792 /* TrayMenu.rb in Resources */,
 				A50C874317C2ADDC00BD8792 /* ExtFixnum.rb in Resources */,

@@ -12,5 +12,6 @@ build/
 *.mode2v3
 
 xcuserdata/
+xcshareddata/
 
 # http://stackoverflow.com/questions/49478/git-ignore-file-for-xcode-projects
