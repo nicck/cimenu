@@ -4,14 +4,15 @@ class AppDelegate
   attr_accessor :tokenTextField
 
   def applicationDidFinishLaunching(notification)
-    puts 'Hi!'
+    puts 'applicationDidFinishLaunching'
 
     @trayMenu = TrayMenu.new(self)
     @trayMenu.reDraw
 
-    statusBar.trayMenu = @trayMenu
+    @statusBar = StatusBar.new(self)
+    @statusBar.trayMenu = @trayMenu
 
-    dataFetcher = DataFetcher.new(statusBar)
+    dataFetcher = DataFetcher.new(@statusBar)
     dataFetcher.fetch
     dataFetcher.startTimer
   end
@@ -28,20 +29,16 @@ class AppDelegate
 
   def controlTextDidChange(notification)
     value = notification.object.stringValue
-    p "controlTextDidChange: " << value
-    saveApiKey value
+    p "controlTextDidChange: #{value}"
+    saveApiKey(value)
   end
 
-#  def controlTextDidEndEditing(notification)
-#    p "controlTextDidEndEditing: " << notification.object.stringValue
-#  end
-
   def menuWillOpen(notification)
-    statusBar.menuWillOpen
+    @statusBar.menuWillOpen
   end
 
   def menuDidClose(notification)
-    statusBar.menuDidClose
+    @statusBar.menuDidClose
   end
 
   private
@@ -55,9 +52,5 @@ class AppDelegate
   def readApiKey
     defaults = NSUserDefaults.standardUserDefaults
     defaults.objectForKey('org.cimenu.apikey')
-  end
-
-  def statusBar
-    @statusBar ||= StatusBar.new(self)
   end
 end
