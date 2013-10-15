@@ -23,14 +23,17 @@ class AppDelegate
   end
 
   def showPreferences(notification)
-    tokenTextField.stringValue = readApiKey
+    tokenTextField.stringValue = apiKey
     preferencesWindow.makeKeyAndOrderFront(self)
   end
 
   def controlTextDidChange(notification)
     value = notification.object.stringValue
-    p "controlTextDidChange: #{value}"
-    saveApiKey(value)
+
+    if value.length == 20
+      p "controlTextDidChange and length is 20: #{value}"
+      self.apiKey = value
+    end
   end
 
   def menuWillOpen(notification)
@@ -43,13 +46,13 @@ class AppDelegate
 
   private
 
-  def saveApiKey(apiKey)
+  def apiKey=(token)
     defaults = NSUserDefaults.standardUserDefaults
-    defaults.setObject(apiKey, forKey: 'org.cimenu.apikey')
+    defaults.setObject(token, forKey: 'org.cimenu.apikey')
     defaults.synchronize
   end
 
-  def readApiKey
+  def apiKey
     defaults = NSUserDefaults.standardUserDefaults
     defaults.objectForKey('org.cimenu.apikey')
   end
