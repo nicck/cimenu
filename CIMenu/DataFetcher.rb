@@ -1,17 +1,14 @@
 class DataFetcher
+  URL = "https://semaphoreapp.com/api/v1/projects?auth_token="
   INTERVAL = 15
 
   def initialize(statusBar)
     @statusBar = statusBar
-    @url = "https://semaphoreapp.com/api/v1/projects?auth_token="
   end
 
   def fetch(timer = nil)
-    defaults = NSUserDefaults.standardUserDefaults
-    apiKey = defaults.objectForKey('org.cimenu.apikey')
+    request = NSMutableURLRequest.requestWithURL(url)
 
-    p "fetching with #{apiKey}"
-    request = NSMutableURLRequest.requestWithURL(NSURL.URLWithString("#{@url}#{apiKey}"))
     NSURLConnection.connectionWithRequest(request,
       delegate:ConnectionDelegate.new(@statusBar))
   end
@@ -26,5 +23,18 @@ class DataFetcher
 
   def stopTimer
     @timer.invalidate && @timer = nil if @timer
+  end
+
+  private
+
+  def apiKey
+    defaults = NSUserDefaults.standardUserDefaults
+    token = defaults.objectForKey 'org.cimenu.apikey'
+    p "fetching with #{token}"
+    token
+  end
+
+  def url
+    NSURL.URLWithString("#{URL}#{apiKey}")
   end
 end
