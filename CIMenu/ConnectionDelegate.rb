@@ -3,7 +3,7 @@ require 'json'
 class ConnectionDelegate
   def initialize(statusBar)
     @statusBar = statusBar
-    # @statusBar.startAnimation
+    @statusBar.startAnimation
   end
 
   def connection(connection, didReceiveResponse:response)
@@ -16,7 +16,7 @@ class ConnectionDelegate
   end
 
   def connectionDidFinishLoading(connection)
-    # @statusBar.stopAnimation
+    @statusBar.stopAnimation
 
     case @response.statusCode
     when 200...300
@@ -31,7 +31,7 @@ class ConnectionDelegate
       end
 
       @statusBar.trayMenu.reDraw(json)
-      @statusBar.updateIconWithData(json)
+      # @statusBar.updateIconWithData(json)
 
     when 300...400
       puts "TODO: Handle redirect!"
