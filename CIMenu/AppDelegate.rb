@@ -1,6 +1,7 @@
 class AppDelegate
   attr_reader :trayMenu
   attr_accessor :preferencesWindow
+  attr_accessor :tokenTextField
 
   def applicationDidFinishLaunching(notification)
     puts 'Hi!'
@@ -21,6 +22,7 @@ class AppDelegate
   end
 
   def showPreferences(notification)
+    tokenTextField.stringValue = readApiKey
     preferencesWindow.makeKeyAndOrderFront(self)
   end
 
@@ -48,6 +50,11 @@ class AppDelegate
     defaults = NSUserDefaults.standardUserDefaults
     defaults.setObject(apiKey, forKey: 'org.cimenu.apikey')
     defaults.synchronize
+  end
+
+  def readApiKey
+    defaults = NSUserDefaults.standardUserDefaults
+    defaults.objectForKey('org.cimenu.apikey')
   end
 
   def statusBar
