@@ -48,12 +48,14 @@ class AppDelegate
 
   def apiKey=(token)
     defaults = NSUserDefaults.standardUserDefaults
-    defaults.setObject(token, forKey: 'org.cimenu.apikey')
+    # defaults.setObject(token, forKey: 'org.cimenu.apikey')
+    defaults['org.cimenu.apikey'] = token
     defaults.synchronize
   end
 
   def apiKey
     defaults = NSUserDefaults.standardUserDefaults
-    defaults.objectForKey('org.cimenu.apikey')
+    # defaults.objectForKey('org.cimenu.apikey')
+    defaults['org.cimenu.apikey']
   end
 end
