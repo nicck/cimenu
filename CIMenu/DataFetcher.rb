@@ -1,6 +1,6 @@
 class DataFetcher
   URL = "https://semaphoreapp.com/api/v1/projects?auth_token="
-  INTERVAL = 15
+  INTERVAL = 60
 
   def initialize(statusBar)
     @statusBar = statusBar
