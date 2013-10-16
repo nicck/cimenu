@@ -22,7 +22,7 @@ class AppDelegate
     exit
   end
 
-  def showPreferences(notification)
+  def showPreferences(sender)
     tokenTextField.stringValue = apiKey
     preferencesWindow.makeKeyAndOrderFront(self)
   end
