@@ -59,6 +59,12 @@ class TrayMenu < NSMenu
   end
 
   def preferencesItem
-    @preferencesItem ||= Preferences::MenuItem.new(delegate)
+    @preferencesItem ||= begin
+      item = NSMenuItem.new
+      item.title = "Preferences..."
+      item.target = delegate
+      item.action = "showPreferences:"
+      item
+    end
   end
 end
