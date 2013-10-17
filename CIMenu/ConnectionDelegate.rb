@@ -30,6 +30,7 @@ class ConnectionDelegate
         return
       end
 
+      # TODO: try https://github.com/Simbul/semaphoreapp
       @statusBar.trayMenu.reDraw(json)
       # @statusBar.updateIconWithData(json)
 
