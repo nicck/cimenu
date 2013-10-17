@@ -9,12 +9,17 @@ class TrayMenu < NSMenu
     removeAllItems
 
     projects.each do |project|
-      item = NSMenuItem.new
-      item.title = project['name']
+      branches = branchesFor(project)
 
-      addItem(item)
+      if branches.size > 0
+        item = NSMenuItem.new
+        item.title = project['name']
+        addItem(item)
 
-      addBranchesFor(project)
+        addBranches(branches)
+
+        addItem(NSMenuItem.separatorItem)
+      end
     end
 
     addItem(preferencesItem)
@@ -23,21 +28,23 @@ class TrayMenu < NSMenu
 
   private
 
-  def addBranchesFor(project)
-    project['branches'].each do |branch|
-      if branch['finished_at'].nil? || Time.parse(branch['finished_at']) > 2.days.ago
-        item = NSMenuItem.new
-
-        item.title = truncate(branch['branch_name'], 32)
-        item.target = delegate
-        item.action = 'quit:'
-        item.image = NSImage.imageNamed "build_#{branch['result']}.png"
-
-        addItem(item)
-      end
+  def branchesFor(project)
+    project['branches'].select do |branch|
+      branch['finished_at'].nil? || Time.parse(branch['finished_at']) > 2.days.ago
     end
+  end
 
-    addItem(NSMenuItem.separatorItem)
+  def addBranches(branches)
+    branches.each do |branch|
+      item = NSMenuItem.new
+
+      item.title = truncate(branch['branch_name'], 32)
+      item.target = delegate
+      item.action = 'quit:'
+      item.image = NSImage.imageNamed "build_#{branch['result']}.png"
+
+      addItem(item)
+    end
   end
 
   def truncate(branch_name, length)
