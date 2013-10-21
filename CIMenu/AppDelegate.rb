@@ -12,9 +12,9 @@ class AppDelegate
     @statusBar = StatusBar.new(self)
     @statusBar.trayMenu = @trayMenu
 
-    dataFetcher = DataFetcher.new(@statusBar)
-    dataFetcher.fetch
-    dataFetcher.startTimer
+    @dataFetcher = DataFetcher.new(@statusBar)
+    @dataFetcher.fetch
+    @dataFetcher.startTimer
   end
 
   def quit(notification)
@@ -38,6 +38,7 @@ class AppDelegate
     if value.length == 20
       p "controlTextDidChange and length is 20: #{value}"
       self.apiKey = value
+      @dataFetcher.fetch
     end
   end
 
