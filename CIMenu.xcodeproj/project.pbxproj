@@ -210,7 +210,7 @@
 			buildPhases = (
 			);
 			buildToolPath = /usr/local/bin/macruby_deploy;
-			buildWorkingDirectory = /Users/nicck/Desktop;
+			buildWorkingDirectory = "";
 			dependencies = (
 				A59D3F6617C2A34000988430 /* PBXTargetDependency */,
 			);
