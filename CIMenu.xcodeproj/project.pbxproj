@@ -210,6 +210,7 @@
 			buildPhases = (
 			);
 			buildToolPath = /usr/local/bin/macruby_deploy;
+			buildWorkingDirectory = /Users/nicck/Desktop;
 			dependencies = (
 				A59D3F6617C2A34000988430 /* PBXTargetDependency */,
 			);
@@ -226,6 +227,7 @@
 			buildPhases = (
 				A59D3F5917C2A34000988430 /* Sources */,
 				A59D3F5A17C2A34000988430 /* Frameworks */,
+				A57FFE821815A4A50030D87D /* ShellScript */,
 				A59D3F5B17C2A34000988430 /* Resources */,
 			);
 			buildRules = (
@@ -299,6 +301,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A57FFE821815A4A50030D87D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A59D3F5917C2A34000988430 /* Sources */ = {
@@ -409,6 +427,7 @@
 				INFOPLIST_FILE = "CIMenu/CIMenu-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -428,6 +447,7 @@
 				INFOPLIST_FILE = "CIMenu/CIMenu-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
