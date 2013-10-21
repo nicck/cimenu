@@ -12,6 +12,9 @@
 		A50C873F17C2AD4C00BD8792 /* StatusBar.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C873E17C2AD4C00BD8792 /* StatusBar.rb */; };
 		A50C874117C2AD6700BD8792 /* TrayMenu.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C874017C2AD6700BD8792 /* TrayMenu.rb */; };
 		A50C874317C2ADDC00BD8792 /* ExtFixnum.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C874217C2ADDC00BD8792 /* ExtFixnum.rb */; };
+		A57FFE851815BDEE0030D87D /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A57FFE841815BDEE0030D87D /* Sparkle.framework */; };
+		A57FFE871815BE540030D87D /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A57FFE841815BDEE0030D87D /* Sparkle.framework */; };
+		A57FFE891815D21E0030D87D /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = A57FFE881815D21E0030D87D /* dsa_pub.pem */; };
 		A59D3F6117C2A34000988430 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59D3F6017C2A34000988430 /* Cocoa.framework */; };
 		A59D3F6317C2A34000988430 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59D3F6217C2A34000988430 /* MacRuby.framework */; };
 		A59D3F6C17C2A34000988430 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A59D3F6A17C2A34000988430 /* InfoPlist.strings */; };
@@ -48,12 +51,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A57FFE861815BE1A0030D87D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A57FFE871815BE540030D87D /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A50C873817C2ACDD00BD8792 /* ConnectionDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ConnectionDelegate.rb; sourceTree = "<group>"; };
 		A50C873A17C2AD2B00BD8792 /* DataFetcher.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = DataFetcher.rb; sourceTree = "<group>"; };
 		A50C873E17C2AD4C00BD8792 /* StatusBar.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = StatusBar.rb; sourceTree = "<group>"; };
 		A50C874017C2AD6700BD8792 /* TrayMenu.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = TrayMenu.rb; sourceTree = "<group>"; };
 		A50C874217C2ADDC00BD8792 /* ExtFixnum.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ExtFixnum.rb; sourceTree = "<group>"; };
+		A57FFE841815BDEE0030D87D /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		A57FFE881815D21E0030D87D /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		A59D3F5D17C2A34000988430 /* CIMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59D3F6017C2A34000988430 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A59D3F6217C2A34000988430 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
@@ -89,6 +107,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A59D3F6117C2A34000988430 /* Cocoa.framework in Frameworks */,
+				A57FFE851815BDEE0030D87D /* Sparkle.framework in Frameworks */,
 				A59D3F6317C2A34000988430 /* MacRuby.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +153,7 @@
 		A59D3F5F17C2A34000988430 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A57FFE841815BDEE0030D87D /* Sparkle.framework */,
 				A59D3F6017C2A34000988430 /* Cocoa.framework */,
 				A59D3F6217C2A34000988430 /* MacRuby.framework */,
 			);
@@ -171,6 +191,7 @@
 		A59D3F7017C2A34100988430 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A57FFE881815D21E0030D87D /* dsa_pub.pem */,
 				A59D3F7117C2A34100988430 /* MainMenu.xib */,
 			);
 			name = Resources;
@@ -229,6 +250,7 @@
 				A59D3F5A17C2A34000988430 /* Frameworks */,
 				A57FFE821815A4A50030D87D /* ShellScript */,
 				A59D3F5B17C2A34000988430 /* Resources */,
+				A57FFE861815BE1A0030D87D /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -284,6 +306,7 @@
 				A5BA2DEF17C2B4EF009CB2CB /* 2.png in Resources */,
 				A5BA2DF017C2B4EF009CB2CB /* 3.png in Resources */,
 				A5BA2DF117C2B4EF009CB2CB /* 4.png in Resources */,
+				A57FFE891815D21E0030D87D /* dsa_pub.pem in Resources */,
 				A5BA2DF217C2B4EF009CB2CB /* 5.png in Resources */,
 				A5BA2DF317C2B4EF009CB2CB /* 6.png in Resources */,
 				A5BA2DF417C2B4EF009CB2CB /* 7.png in Resources */,
@@ -418,8 +441,9 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+					"\\\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\\\"",
 					/Library/Frameworks,
+					/Users/nicck/src/cimenu,
 				);
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -438,8 +462,9 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+					"\\\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\\\"",
 					/Library/Frameworks,
+					/Users/nicck/src/cimenu,
 				);
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

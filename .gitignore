@@ -15,3 +15,5 @@ xcuserdata/
 xcshareddata/
 
 # http://stackoverflow.com/questions/49478/git-ignore-file-for-xcode-projects
+
+dsa_priv.pem

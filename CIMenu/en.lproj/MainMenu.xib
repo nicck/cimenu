@@ -58,6 +58,12 @@ e.g.: https://semaphoreapp.com/projects/123/api</string>
                                     <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Check for Updates..." id="t9T-h7-8Bl">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="checkForUpdates:" target="JoX-4i-yrd" id="9fu-BY-YAo"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="236">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
@@ -694,5 +700,6 @@ e.g.: https://semaphoreapp.com/projects/123/api</string>
             </connections>
         </customObject>
         <customObject id="420" customClass="NSFontManager"/>
+        <customObject id="JoX-4i-yrd" customClass="SUUpdater"/>
     </objects>
 </document>
