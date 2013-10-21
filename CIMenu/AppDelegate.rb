@@ -23,7 +23,7 @@ class AppDelegate
   end
 
   def showPreferences(sender)
-    tokenTextField.stringValue = apiKey
+    tokenTextField.stringValue = apiKey unless apiKey.nil?
     preferencesWindow.makeKeyAndOrderFront(self)
   end
 
