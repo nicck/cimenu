@@ -1,5 +1,9 @@
 require 'time'
 
+class BuildMenuItem < NSMenuItem
+  attr_accessor :url
+end
+
 class TrayMenu < NSMenu
   def initialize(delegate)
     self.delegate = delegate
@@ -14,6 +18,7 @@ class TrayMenu < NSMenu
       if branches.size > 0
         item = NSMenuItem.new
         item.title = project['name']
+
         addItem(item)
 
         addBranches(branches)
@@ -36,11 +41,12 @@ class TrayMenu < NSMenu
 
   def addBranches(branches)
     branches.each do |branch|
-      item = NSMenuItem.new
+      item = BuildMenuItem.new
 
+      item.url = branch['build_url']
       item.title = truncate(branch['branch_name'], 32)
       item.target = delegate
-      item.action = 'quit:'
+      item.action = 'openBuild:'
       item.image = NSImage.imageNamed "build_#{branch['result']}.png"
 
       addItem(item)

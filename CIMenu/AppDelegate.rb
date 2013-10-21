@@ -27,6 +27,11 @@ class AppDelegate
     preferencesWindow.makeKeyAndOrderFront(self)
   end
 
+  def openBuild(menuItem)
+    url = NSURL.URLWithString(menuItem.url)
+    NSWorkspace.sharedWorkspace.openURL(url)
+  end
+
   def controlTextDidChange(notification)
     value = notification.object.stringValue
 
