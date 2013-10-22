@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>CIMenu Changelog</title>
+    <link>http://nicck.github.io/cimenu/updates.xml</link>
+    <description>Most recent changes with links to updates.</description>
+    <language>en</language>
+    <item>
+      <title>Version 0.0.3 (build 32)</title>
+      <description><![CDATA[
+        <p>New:</p>
+        <ul>
+          <li>Open build page on semaphore</li>
+          <li>Application self-updating</li>
+        </ul>
+        <p>Fixes:</p>
+        <ul>
+          <li>Preferences window shows current token</li>
+        </ul>
+      ]]></description>
+      <pubDate>Wed, 23 Oct 2013 00:57:00 +0400</pubDate>
+      <!-- <sparkle:releaseNotesLink>nicck.github.io/cimenu/updates.html</sparkle:releaseNotesLink> -->
+      <sparkle:minimumSystemVersion>10.6</sparkle:minimumSystemVersion>
+      <enclosure
+        url="http://nicck.github.io/cimenu/downloads/CIMenu-0.0.3.dmg"
+        sparkle:version="32"
+        sparkle:shortVersionString="0.0.3"
+        length="9445998"
+        type="application/octet-stream"
+        sparkle:dsaSignature="MC4CFQCDtFoEiiFG4sO6CFuWEJfXThG9GgIVAKzu1hZ6cdHkdGUQp5Gy3/TNQggm"
+      />
+    </item>
+  </channel>
+</rss>
