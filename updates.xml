@@ -30,5 +30,25 @@
         sparkle:dsaSignature="MC4CFQCDtFoEiiFG4sO6CFuWEJfXThG9GgIVAKzu1hZ6cdHkdGUQp5Gy3/TNQggm"
       />
     </item>
+    <item>
+      <title>Version 0.0.4 (build 36)</title>
+      <description><![CDATA[
+        <p>New:</p>
+        <ul>
+          <li>Don't display CIMenu icon while switching tabs</li>
+        </ul>
+      ]]></description>
+      <pubDate>Wed, 24 Oct 2013 01:25:00 +0400</pubDate>
+      <!-- <sparkle:releaseNotesLink>nicck.github.io/cimenu/updates.html</sparkle:releaseNotesLink> -->
+      <sparkle:minimumSystemVersion>10.6</sparkle:minimumSystemVersion>
+      <enclosure
+        url="http://nicck.github.io/cimenu/downloads/CIMenu-0.0.4.dmg"
+        sparkle:version="36"
+        sparkle:shortVersionString="0.0.4"
+        length="9430973"
+        type="application/octet-stream"
+        sparkle:dsaSignature="MC0CFDbxMFD9khclwI9cqVc14PCFOw1bAhUA3GxG/8oG8J/JEtImLWitxFg4er8="
+      />
+    </item>
   </channel>
 </rss>
