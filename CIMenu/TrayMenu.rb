@@ -27,7 +27,10 @@ class TrayMenu < NSMenu
       end
     end
 
+    addItem(aboutItem)
+    addItem(updateItem)
     addItem(preferencesItem)
+    addItem(NSMenuItem.separatorItem)
     addItem(quitItem)
   end
 
@@ -61,12 +64,22 @@ class TrayMenu < NSMenu
     end
   end
 
-  def quitItem
-    @quitItem ||= begin
+  def aboutItem
+    @aboutItem ||= begin
       item = NSMenuItem.new
-      item.title = 'Quit'
+      item.title = 'About CIMenu'
+      item.target = NSApplication.sharedApplication
+      item.action = 'orderFrontStandardAboutPanel:'
+      item
+    end
+  end
+
+  def updateItem
+    @updateItem ||= begin
+      item = NSMenuItem.new
+      item.title = 'Check for updates…'
       item.target = delegate
-      item.action = 'quit:'
+      item.action = 'checkForUpdates:'
       item
     end
   end
@@ -77,6 +90,16 @@ class TrayMenu < NSMenu
       item.title = "Preferences…"
       item.target = delegate
       item.action = "showPreferences:"
+      item
+    end
+  end
+
+  def quitItem
+    @quitItem ||= begin
+      item = NSMenuItem.new
+      item.title = 'Quit'
+      item.target = delegate
+      item.action = 'quit:'
       item
     end
   end

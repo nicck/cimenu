@@ -2,6 +2,7 @@ class AppDelegate
   attr_reader :trayMenu
   attr_accessor :preferencesWindow
   attr_accessor :tokenTextField
+  attr_accessor :updater
 
   def applicationDidFinishLaunching(notification)
     puts 'applicationDidFinishLaunching'
@@ -15,6 +16,10 @@ class AppDelegate
     @dataFetcher = DataFetcher.new(@statusBar)
     @dataFetcher.fetch
     @dataFetcher.startTimer
+  end
+
+  def checkForUpdates(sender)
+    updater.checkForUpdates(sender)
   end
 
   def quit(notification)
