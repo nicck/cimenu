@@ -50,5 +50,24 @@
         sparkle:dsaSignature="MC0CFDbxMFD9khclwI9cqVc14PCFOw1bAhUA3GxG/8oG8J/JEtImLWitxFg4er8="
       />
     </item>
+    <item>
+      <title>Version 0.0.5 (build 56)</title>
+      <description><![CDATA[
+        <p>New:</p>
+        <ul>
+          <li>Fix Preferences and About windows activation</li>
+        </ul>
+      ]]></description>
+      <pubDate>Wed, 18 Nov 2013 22:55:00 +0400</pubDate>
+      <sparkle:minimumSystemVersion>10.6</sparkle:minimumSystemVersion>
+      <enclosure
+        url="http://nicck.github.io/cimenu/downloads/CIMenu-0.0.5.dmg"
+        sparkle:version="56"
+        sparkle:shortVersionString="0.0.5"
+        length="9432821"
+        type="application/octet-stream"
+        sparkle:dsaSignature="MC0CFQDe7mETZc4oVkOLyTpqpZ6y+I8w3QIUDyoXMGD99hVynLPKcIegVgq5gPw="
+      />
+    </item>
   </channel>
 </rss>
