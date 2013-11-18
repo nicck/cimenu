@@ -24,6 +24,11 @@ class AppDelegate
     updater.checkForUpdates(sender)
   end
 
+  def showAboutPanel(sender)
+    NSApplication.sharedApplication.orderFrontStandardAboutPanel(sender)
+    NSApp.arrangeInFront(sender)
+  end
+
   def quit(notification)
     puts 'Bye!'
     exit

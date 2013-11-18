@@ -68,8 +68,8 @@ class TrayMenu < NSMenu
     @aboutItem ||= begin
       item = NSMenuItem.new
       item.title = 'About CIMenu'
-      item.target = NSApplication.sharedApplication
-      item.action = 'orderFrontStandardAboutPanel:'
+      item.target = delegate
+      item.action = 'showAboutPanel:'
       item
     end
   end
