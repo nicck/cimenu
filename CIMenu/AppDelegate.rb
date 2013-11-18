@@ -7,6 +7,8 @@ class AppDelegate
   def applicationDidFinishLaunching(notification)
     puts 'applicationDidFinishLaunching'
 
+    NSApp.setActivationPolicy(NSApplicationActivationPolicyProhibited)
+
     @trayMenu = TrayMenu.new(self)
     @trayMenu.reDraw
 
@@ -29,7 +31,13 @@ class AppDelegate
 
   def showPreferences(sender)
     tokenTextField.stringValue = apiKey unless apiKey.nil?
-    preferencesWindow.makeKeyAndOrderFront(self)
+    NSApp.setActivationPolicy(NSApplicationActivationPolicyRegular)
+    NSApp.activateIgnoringOtherApps(true)
+    preferencesWindow.makeKeyAndOrderFront(nil)
+  end
+
+  def windowWillClose(notification)
+    NSApp.setActivationPolicy(NSApplicationActivationPolicyProhibited)
   end
 
   def openBuild(menuItem)

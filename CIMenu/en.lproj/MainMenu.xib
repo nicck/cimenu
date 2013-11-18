@@ -46,6 +46,9 @@ e.g.: https://semaphoreapp.com/projects/123/api</string>
                     </textField>
                 </subviews>
             </view>
+            <connections>
+                <outlet property="delegate" destination="494" id="DHZ-iM-oe9"/>
+            </connections>
         </window>
         <customObject id="494" customClass="AppDelegate">
             <connections>
