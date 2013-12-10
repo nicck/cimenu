@@ -67,7 +67,7 @@ class TrayMenu < NSMenu
   def aboutItem
     @aboutItem ||= begin
       item = NSMenuItem.new
-      item.title = 'About CIMenu'
+      item.title = 'About CI Menu'
       item.target = delegate
       item.action = 'showAboutPanel:'
       item
