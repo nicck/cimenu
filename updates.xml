@@ -69,5 +69,31 @@
         sparkle:dsaSignature="MC0CFQDe7mETZc4oVkOLyTpqpZ6y+I8w3QIUDyoXMGD99hVynLPKcIegVgq5gPw="
       />
     </item>
+
+    <item>
+      <title>Version 0.0.6 (build 57)</title>
+      <description><![CDATA[
+        <p>Enable CI Menu.app delta updates</p>
+      ]]></description>
+      <pubDate>Wed, 11 Dec 2013 01:20:00 +0400</pubDate>
+      <sparkle:minimumSystemVersion>10.6</sparkle:minimumSystemVersion>
+      <enclosure
+        url="http://nicck.github.io/cimenu/downloads/CIMenu-0.0.6.dmg"
+        sparkle:version="57"
+        sparkle:shortVersionString="0.0.6"
+        length="9436698"
+        type="application/octet-stream"
+        sparkle:dsaSignature="MC0CFA5YzrQZkcvJDnMIM9ItxhQRsFolAhUA72WjY6EN0YJVzlnP6KfhbVe0+u4="
+      />
+      <sparkle:deltas>
+        <enclosure
+          url="http://nicck.github.io/cimenu/downloads/0.0.5-0.0.6.delta"
+          sparkle:version="57"
+          sparkle:deltaFrom="56"
+          length="6088"
+          type="application/octet-stream"
+          sparkle:dsaSignature="MCwCFFsJOyXCLthMcw1tN2CPihDE0dCbAhRdY2/TYlFXHXS+L+Ew92mknJQoEQ==" />
+      </sparkle:deltas>
+    </item>
   </channel>
 </rss>
