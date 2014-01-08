@@ -2,15 +2,14 @@ class DataFetcher
   URL = "https://semaphoreapp.com/api/v1/projects?auth_token="
   INTERVAL = 60
 
-  def initialize(statusBar)
-    @statusBar = statusBar
+  def initialize
   end
 
   def fetch(timer = nil)
     request = NSMutableURLRequest.requestWithURL(url)
 
     NSURLConnection.connectionWithRequest(request,
-      delegate:ConnectionDelegate.new(@statusBar))
+      delegate:ConnectionDelegate.new)
   end
 
   def startTimer

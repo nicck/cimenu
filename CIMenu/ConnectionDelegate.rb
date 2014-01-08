@@ -1,9 +1,10 @@
 require 'json'
 
 class ConnectionDelegate
-  def initialize(statusBar)
-    @statusBar = statusBar
-    @statusBar.startAnimation
+  def initialize
+    NSNotificationCenter.defaultCenter.postNotificationName(
+      "com.cimenu.CIMenu.data.fetching",
+      object:nil)
   end
 
   def connection(connection, didReceiveResponse:response)
@@ -16,7 +17,9 @@ class ConnectionDelegate
   end
 
   def connectionDidFinishLoading(connection)
-    @statusBar.stopAnimation
+    NSNotificationCenter.defaultCenter.postNotificationName(
+      "com.cimenu.CIMenu.data.done",
+      object:nil)
 
     case @response.statusCode
     when 200...300
@@ -30,14 +33,15 @@ class ConnectionDelegate
         return
       end
 
-      # TODO: try https://github.com/Simbul/semaphoreapp
-      @statusBar.trayMenu.reDraw(json)
-      # @statusBar.updateIconWithData(json)
+      NSNotificationCenter.defaultCenter.postNotificationName(
+        "com.cimenu.CIMenu.data.received",
+        object:nil,
+        userInfo:json)
 
     when 300...400
       puts "TODO: Handle redirect!"
     else
-      @statusBar.image = @statusBar.iconOffline
+      # @statusBar.image = @statusBar.iconOffline
       puts "Oh noes, an error occurred: #{@response.statusCode}"
     end
   end

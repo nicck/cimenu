@@ -1,19 +1,16 @@
 class StatusBar
   attr_accessor :delegate
 
-  def initialize(delegate)
+  def initialize(delegate, menu)
     self.delegate = delegate
 
     @statusBar = NSStatusBar
       .systemStatusBar
       .statusItemWithLength(NSVariableStatusItemLength)
 
+    @statusBar.menu = menu
     @statusBar.image = iconActive
     @statusBar.highlightMode = true
-  end
-
-  def trayMenu=(menu)
-    @statusBar.menu = menu
   end
 
   def trayMenu

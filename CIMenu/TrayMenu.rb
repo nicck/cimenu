@@ -7,6 +7,7 @@ end
 class TrayMenu < NSMenu
   def initialize(delegate)
     self.delegate = delegate
+    reDraw([])
   end
 
   def reDraw(projects = [])
