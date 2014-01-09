@@ -29,7 +29,10 @@ class ConnectionDelegate
       begin
         json = JSON.parse(responseBody)
       rescue Exception
-        NSApplication.sharedApplication.delegate.showPreferences(nil)
+        NSNotificationCenter.defaultCenter.postNotificationName(
+          "com.cimenu.CIMenu.semaphore.dataParseFailed",
+          object:nil,
+          userInfo:responseBody)
         return
       end
 

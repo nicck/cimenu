@@ -16,6 +16,16 @@ class AppDelegate
     @dataFetcher = DataFetcher.new
     @dataFetcher.fetch
     @dataFetcher.startTimer
+
+    NSNotificationCenter.defaultCenter.addObserver(self,
+      selector:"dataParseFailed:",
+      name:"com.cimenu.CIMenu.semaphore.dataParseFailed",
+      object:nil)
+  end
+
+  def dataParseFailed(notification)
+    p "response: #{notification.userInfo}"
+    showPreferences
   end
 
   # from TrayMenu (via target action)
