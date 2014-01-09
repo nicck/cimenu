@@ -3,7 +3,7 @@ require 'json'
 class ConnectionDelegate
   def initialize
     NSNotificationCenter.defaultCenter.postNotificationName(
-      "com.cimenu.CIMenu.data.fetching",
+      "com.cimenu.CIMenu.semaphore.connectionWillStartLoading",
       object:nil)
   end
 
@@ -18,7 +18,7 @@ class ConnectionDelegate
 
   def connectionDidFinishLoading(connection)
     NSNotificationCenter.defaultCenter.postNotificationName(
-      "com.cimenu.CIMenu.data.done",
+      "com.cimenu.CIMenu.semaphore.connectionDidFinishLoading",
       object:nil)
 
     case @response.statusCode
@@ -34,7 +34,7 @@ class ConnectionDelegate
       end
 
       NSNotificationCenter.defaultCenter.postNotificationName(
-        "com.cimenu.CIMenu.data.received",
+        "com.cimenu.CIMenu.semaphore.dataReceived",
         object:nil,
         userInfo:json)
 

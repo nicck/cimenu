@@ -10,7 +10,7 @@ class TrayMenu < NSMenu
 
     NSNotificationCenter.defaultCenter.addObserver(self,
       selector:"dataReceived:",
-      name:"com.cimenu.CIMenu.data.received",
+      name:"com.cimenu.CIMenu.semaphore.dataReceived",
       object:nil)
 
     reDraw([])

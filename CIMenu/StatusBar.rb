@@ -13,13 +13,13 @@ class StatusBar
     @statusBar.highlightMode = true
 
     NSNotificationCenter.defaultCenter.addObserver(self,
-       selector:"dataFetching:",
-       name:"com.cimenu.CIMenu.data.fetching",
+       selector:"connectionWillStartLoading:",
+       name:"com.cimenu.CIMenu.semaphore.connectionWillStartLoading",
        object:nil)
 
     NSNotificationCenter.defaultCenter.addObserver(self,
-       selector:"dataDone:",
-       name:"com.cimenu.CIMenu.data.done",
+       selector:"connectionDidFinishLoading:",
+       name:"com.cimenu.CIMenu.semaphore.connectionDidFinishLoading",
        object:nil)
   end
 
@@ -67,11 +67,11 @@ class StatusBar
     pending ? startAnimation : stopAnimation
   end
 
-  def dataFetching(notification)
+  def connectionWillStartLoading(notification)
     startAnimation
   end
 
-  def dataDone(notification)
+  def connectionDidFinishLoading(notification)
     stopAnimation
   end
 
