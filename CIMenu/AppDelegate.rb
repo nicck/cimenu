@@ -13,38 +13,9 @@ class AppDelegate
 
     @statusBar = StatusBar.new(self, @trayMenu)
 
-    NSNotificationCenter.defaultCenter.addObserver(self,
-      selector:"dataReceived:",
-      name:"com.cimenu.CIMenu.data.received",
-      object:nil)
-
-    NSNotificationCenter.defaultCenter.addObserver(self,
-       selector:"dataFetching:",
-       name:"com.cimenu.CIMenu.data.fetching",
-       object:nil)
-
-    NSNotificationCenter.defaultCenter.addObserver(self,
-       selector:"dataDone:",
-       name:"com.cimenu.CIMenu.data.done",
-       object:nil)
-
     @dataFetcher = DataFetcher.new
     @dataFetcher.fetch
     @dataFetcher.startTimer
-  end
-
-  def dataFetching(notification)
-    @statusBar.startAnimation
-  end
-
-  def dataDone(notification)
-    @statusBar.stopAnimation
-  end
-
-  def dataReceived(notification)
-    # TODO: try https://github.com/Simbul/semaphoreapp
-    json = notification.userInfo
-    @statusBar.trayMenu.reDraw(json)
   end
 
   # from TrayMenu (via target action)

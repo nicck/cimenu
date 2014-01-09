@@ -7,7 +7,19 @@ end
 class TrayMenu < NSMenu
   def initialize(delegate)
     self.delegate = delegate
+
+    NSNotificationCenter.defaultCenter.addObserver(self,
+      selector:"dataReceived:",
+      name:"com.cimenu.CIMenu.data.received",
+      object:nil)
+
     reDraw([])
+  end
+
+  def dataReceived(notification)
+    # TODO: try https://github.com/Simbul/semaphoreapp
+    json = notification.userInfo
+    reDraw(json)
   end
 
   def reDraw(projects = [])

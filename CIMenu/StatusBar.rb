@@ -11,10 +11,16 @@ class StatusBar
     @statusBar.menu = menu
     @statusBar.image = iconActive
     @statusBar.highlightMode = true
-  end
 
-  def trayMenu
-    @statusBar.menu
+    NSNotificationCenter.defaultCenter.addObserver(self,
+       selector:"dataFetching:",
+       name:"com.cimenu.CIMenu.data.fetching",
+       object:nil)
+
+    NSNotificationCenter.defaultCenter.addObserver(self,
+       selector:"dataDone:",
+       name:"com.cimenu.CIMenu.data.done",
+       object:nil)
   end
 
   def menuWillOpen
@@ -59,6 +65,14 @@ class StatusBar
     end
 
     pending ? startAnimation : stopAnimation
+  end
+
+  def dataFetching(notification)
+    startAnimation
+  end
+
+  def dataDone(notification)
+    stopAnimation
   end
 
   private
