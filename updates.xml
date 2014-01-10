@@ -95,5 +95,35 @@
           sparkle:dsaSignature="MCwCFFsJOyXCLthMcw1tN2CPihDE0dCbAhRdY2/TYlFXHXS+L+Ew92mknJQoEQ==" />
       </sparkle:deltas>
     </item>
+
+    <item>
+      <title>Version 0.0.7 (build 88)</title>
+      <description><![CDATA[
+        <ul>
+          <li>Added 'Start at Login' option to Preferences - <a href="http://github.com/nicck/cimenu/issues/7">GH#7</a></li>
+          <li>Better About panel</li>
+          <li>bugfixes - <a href="http://github.com/nicck/cimenu/issues/8">GH#8</a> <a href="http://github.com/nicck/cimenu/issues/9">GH#9</a></li>
+        </ul>
+      ]]></description>
+      <pubDate>Wed, 11 Dec 2013 01:20:00 +0400</pubDate>
+      <sparkle:minimumSystemVersion>10.6</sparkle:minimumSystemVersion>
+      <enclosure
+        url="http://nicck.github.io/cimenu/downloads/CIMenu-0.0.7.dmg"
+        sparkle:version="88"
+        sparkle:shortVersionString="0.0.7"
+        length="9450524"
+        type="application/octet-stream"
+        sparkle:dsaSignature="MCwCFFkUp944v0JoAUCSHI9cvfSd0ULYAhQT7dw2hyVe5qqSg9by+q0tKEU5Mg=="
+      />
+      <sparkle:deltas>
+        <enclosure
+          url="http://nicck.github.io/cimenu/downloads/0.0.6-0.0.7.delta"
+          sparkle:version="88"
+          sparkle:deltaFrom="57"
+          length="24676"
+          type="application/octet-stream"
+          sparkle:dsaSignature="MCwCFGqR2jLkIegQrM+2Eb2xt9SCZTKuAhQraB5DGp7dGOHSX22uooqGmApnPg==" />
+      </sparkle:deltas>
+    </item>
   </channel>
 </rss>
