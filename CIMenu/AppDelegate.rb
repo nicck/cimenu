@@ -8,8 +8,6 @@ class AppDelegate
   def applicationDidFinishLaunching(notification)
     puts 'applicationDidFinishLaunching'
 
-    NSApp.setActivationPolicy(NSApplicationActivationPolicyProhibited)
-
     @trayMenu = TrayMenu.new(self)
 
     @statusBar = StatusBar.new(self, @trayMenu)
@@ -48,19 +46,16 @@ class AppDelegate
 
   # from TrayMenu (via target action)
   def showPreferences(sender)
-    tokenTextField.stringValue = apiKey unless apiKey.nil?
-    loginStartup.state = runAtLogin?
-    p "runAtLogin: #{runAtLogin?}"
-
-    NSApp.setActivationPolicy(NSApplicationActivationPolicyRegular)
     NSApp.activateIgnoringOtherApps(true)
 
-    preferencesWindow.makeKeyAndOrderFront(nil)
+    tokenTextField.stringValue = apiKey unless apiKey.nil?
+    loginStartup.state = runAtLogin?
+
+    preferencesWindow.makeKeyAndOrderFront(sender)
   end
 
   # from preferencesWindow (via delegate)
   def windowWillClose(notification)
-    NSApp.setActivationPolicy(NSApplicationActivationPolicyProhibited)
   end
 
   # from TrayMenu (via target action)
