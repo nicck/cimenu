@@ -34,8 +34,8 @@ class AppDelegate
 
   # from TrayMenu (via target action)
   def showAboutPanel(sender)
-    NSApplication.sharedApplication.orderFrontStandardAboutPanel(sender)
-    NSApp.arrangeInFront(sender)
+    NSApp.activateIgnoringOtherApps(true)
+    NSApp.orderFrontStandardAboutPanel(sender)
   end
 
   # from TrayMenu (via target action)
