@@ -90,7 +90,7 @@ class TrayMenu < NSMenu
   def updateItem
     @updateItem ||= begin
       item = NSMenuItem.new
-      item.title = 'Check for updates…'
+      item.title = 'Check for Updates…'
       item.target = delegate
       item.action = 'checkForUpdates:'
       item

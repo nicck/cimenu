@@ -2,6 +2,7 @@ class AppDelegate
   attr_reader :trayMenu
   attr_accessor :preferencesWindow
   attr_accessor :tokenTextField
+  attr_accessor :loginStartup
   attr_accessor :updater
 
   def applicationDidFinishLaunching(notification)
@@ -48,8 +49,12 @@ class AppDelegate
   # from TrayMenu (via target action)
   def showPreferences(sender)
     tokenTextField.stringValue = apiKey unless apiKey.nil?
+    loginStartup.state = runAtLogin?
+    p "runAtLogin: #{runAtLogin?}"
+
     NSApp.setActivationPolicy(NSApplicationActivationPolicyRegular)
     NSApp.activateIgnoringOtherApps(true)
+
     preferencesWindow.makeKeyAndOrderFront(nil)
   end
 
@@ -83,6 +88,18 @@ class AppDelegate
   # from TrayMenu (via delegate)
   def menuDidClose(notification)
     @statusBar.menuDidClose
+  end
+
+  def toggleRunAtStartup(sender)
+    if sender.state == NSOnState
+      NSApp.addToLoginItems
+    else
+      NSApp.removeFromLoginItems
+    end
+  end
+
+  def runAtLogin?
+    NSApp.isInLoginItems == 1
   end
 
   private

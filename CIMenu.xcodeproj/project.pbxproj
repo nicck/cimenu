@@ -12,6 +12,7 @@
 		A50C873F17C2AD4C00BD8792 /* StatusBar.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C873E17C2AD4C00BD8792 /* StatusBar.rb */; };
 		A50C874117C2AD6700BD8792 /* TrayMenu.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C874017C2AD6700BD8792 /* TrayMenu.rb */; };
 		A50C874317C2ADDC00BD8792 /* ExtFixnum.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C874217C2ADDC00BD8792 /* ExtFixnum.rb */; };
+		A5576793187F4F5B001775D9 /* NSApplicationLoginItems.m in Sources */ = {isa = PBXBuildFile; fileRef = A5576792187F4F5B001775D9 /* NSApplicationLoginItems.m */; };
 		A57FFE851815BDEE0030D87D /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A57FFE841815BDEE0030D87D /* Sparkle.framework */; };
 		A57FFE871815BE540030D87D /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A57FFE841815BDEE0030D87D /* Sparkle.framework */; };
 		A57FFE891815D21E0030D87D /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = A57FFE881815D21E0030D87D /* dsa_pub.pem */; };
@@ -70,6 +71,8 @@
 		A50C873E17C2AD4C00BD8792 /* StatusBar.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = StatusBar.rb; sourceTree = "<group>"; };
 		A50C874017C2AD6700BD8792 /* TrayMenu.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = TrayMenu.rb; sourceTree = "<group>"; };
 		A50C874217C2ADDC00BD8792 /* ExtFixnum.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ExtFixnum.rb; sourceTree = "<group>"; };
+		A5576791187F4F5B001775D9 /* NSApplicationLoginItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSApplicationLoginItems.h; sourceTree = "<group>"; };
+		A5576792187F4F5B001775D9 /* NSApplicationLoginItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSApplicationLoginItems.m; sourceTree = "<group>"; };
 		A57FFE841815BDEE0030D87D /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		A57FFE881815D21E0030D87D /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		A59D3F5D17C2A34000988430 /* CIMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +203,8 @@
 		A59D3F7417C2A34100988430 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A5576791187F4F5B001775D9 /* NSApplicationLoginItems.h */,
+				A5576792187F4F5B001775D9 /* NSApplicationLoginItems.m */,
 				A59D3F7517C2A34100988430 /* rb_main.rb */,
 			);
 			name = "Other Sources";
@@ -347,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A59D3F6E17C2A34000988430 /* main.m in Sources */,
+				A5576793187F4F5B001775D9 /* NSApplicationLoginItems.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
