@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A50C873917C2ACDD00BD8792 /* ConnectionDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C873817C2ACDD00BD8792 /* ConnectionDelegate.rb */; };
 		A50C873B17C2AD2B00BD8792 /* DataFetcher.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C873A17C2AD2B00BD8792 /* DataFetcher.rb */; };
-		A50C873F17C2AD4C00BD8792 /* StatusBar.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C873E17C2AD4C00BD8792 /* StatusBar.rb */; };
 		A50C874117C2AD6700BD8792 /* TrayMenu.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C874017C2AD6700BD8792 /* TrayMenu.rb */; };
 		A50C874317C2ADDC00BD8792 /* ExtFixnum.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C874217C2ADDC00BD8792 /* ExtFixnum.rb */; };
 		A5576793187F4F5B001775D9 /* NSApplicationLoginItems.m in Sources */ = {isa = PBXBuildFile; fileRef = A5576792187F4F5B001775D9 /* NSApplicationLoginItems.m */; };
@@ -17,6 +16,7 @@
 		A57FFE851815BDEE0030D87D /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A57FFE841815BDEE0030D87D /* Sparkle.framework */; };
 		A57FFE871815BE540030D87D /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A57FFE841815BDEE0030D87D /* Sparkle.framework */; };
 		A57FFE891815D21E0030D87D /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = A57FFE881815D21E0030D87D /* dsa_pub.pem */; };
+		A587EAD5188B2EDF00B88FC5 /* StatusBarItemController.rb in Resources */ = {isa = PBXBuildFile; fileRef = A587EAD4188B2EDF00B88FC5 /* StatusBarItemController.rb */; };
 		A59D3F6117C2A34000988430 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59D3F6017C2A34000988430 /* Cocoa.framework */; };
 		A59D3F6317C2A34000988430 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59D3F6217C2A34000988430 /* MacRuby.framework */; };
 		A59D3F6C17C2A34000988430 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A59D3F6A17C2A34000988430 /* InfoPlist.strings */; };
@@ -69,7 +69,6 @@
 /* Begin PBXFileReference section */
 		A50C873817C2ACDD00BD8792 /* ConnectionDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ConnectionDelegate.rb; sourceTree = "<group>"; };
 		A50C873A17C2AD2B00BD8792 /* DataFetcher.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = DataFetcher.rb; sourceTree = "<group>"; };
-		A50C873E17C2AD4C00BD8792 /* StatusBar.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = StatusBar.rb; sourceTree = "<group>"; };
 		A50C874017C2AD6700BD8792 /* TrayMenu.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = TrayMenu.rb; sourceTree = "<group>"; };
 		A50C874217C2ADDC00BD8792 /* ExtFixnum.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ExtFixnum.rb; sourceTree = "<group>"; };
 		A5576791187F4F5B001775D9 /* NSApplicationLoginItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSApplicationLoginItems.h; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		A5657BF31880982A0038B44D /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		A57FFE841815BDEE0030D87D /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		A57FFE881815D21E0030D87D /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		A587EAD4188B2EDF00B88FC5 /* StatusBarItemController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = StatusBarItemController.rb; sourceTree = "<group>"; };
 		A59D3F5D17C2A34000988430 /* CIMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59D3F6017C2A34000988430 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A59D3F6217C2A34000988430 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
@@ -168,6 +168,7 @@
 		A59D3F6717C2A34000988430 /* CIMenu */ = {
 			isa = PBXGroup;
 			children = (
+				A587EAD4188B2EDF00B88FC5 /* StatusBarItemController.rb */,
 				A50C874417C2B31800BD8792 /* Images */,
 				A59D3F7017C2A34100988430 /* Resources */,
 				A59D3F7417C2A34100988430 /* Other Sources */,
@@ -175,7 +176,6 @@
 				A59D3F7717C2A34100988430 /* AppDelegate.rb */,
 				A50C873817C2ACDD00BD8792 /* ConnectionDelegate.rb */,
 				A50C873A17C2AD2B00BD8792 /* DataFetcher.rb */,
-				A50C873E17C2AD4C00BD8792 /* StatusBar.rb */,
 				A50C874017C2AD6700BD8792 /* TrayMenu.rb */,
 				A50C874217C2ADDC00BD8792 /* ExtFixnum.rb */,
 			);
@@ -307,7 +307,7 @@
 				A59D3F7817C2A34100988430 /* AppDelegate.rb in Resources */,
 				A50C873917C2ACDD00BD8792 /* ConnectionDelegate.rb in Resources */,
 				A50C873B17C2AD2B00BD8792 /* DataFetcher.rb in Resources */,
-				A50C873F17C2AD4C00BD8792 /* StatusBar.rb in Resources */,
+				A587EAD5188B2EDF00B88FC5 /* StatusBarItemController.rb in Resources */,
 				A50C874117C2AD6700BD8792 /* TrayMenu.rb in Resources */,
 				A50C874317C2ADDC00BD8792 /* ExtFixnum.rb in Resources */,
 				A5BA2DEE17C2B4EF009CB2CB /* 1.png in Resources */,

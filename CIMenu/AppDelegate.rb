@@ -1,4 +1,17 @@
 class AppDelegate
+  def applicationWillFinishLaunching(notification)
+    @statusBarItemController = StatusBarItemController.new
+
+    icon_off = NSImage.imageNamed 'gear_offline.png'
+    icon_inv = NSImage.imageNamed 'gear_clicked.png'
+
+    @statusBarItemController.image = icon_off
+    @statusBarItemController.alternateImage = icon_inv
+
+    @statusBarItemController.menuIsActive = false
+    @statusBarItemController.showImage
+  end
+
   attr_reader :trayMenu
   attr_accessor :preferencesWindow
   attr_accessor :tokenTextField
@@ -6,11 +19,15 @@ class AppDelegate
   attr_accessor :updater
 
   def applicationDidFinishLaunching(notification)
+    # statusBarMenuController = StatusBarMenuController.new
+    # mainMenu = statusBarMenuController.mainMenu
+    # @statusBarItemController.statusBarItemMenu = mainMenu
+
     puts 'applicationDidFinishLaunching'
 
     @trayMenu = TrayMenu.new(self)
 
-    @statusBar = StatusBar.new(self, @trayMenu)
+    @statusBarItemController.statusBarItemMenu = @trayMenu
 
     @dataFetcher = DataFetcher.new
     @dataFetcher.fetch
@@ -77,12 +94,14 @@ class AppDelegate
 
   # from TrayMenu (via delegate)
   def menuWillOpen(notification)
-    @statusBar.menuWillOpen
+    @statusBarItemController.menuIsActive = true
+    @statusBarItemController.showImage
   end
 
   # from TrayMenu (via delegate)
   def menuDidClose(notification)
-    @statusBar.menuDidClose
+    @statusBarItemController.menuIsActive = false
+    @statusBarItemController.showImage
   end
 
   def toggleRunAtStartup(sender)
