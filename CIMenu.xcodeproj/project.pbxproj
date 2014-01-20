@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		A50C873917C2ACDD00BD8792 /* ConnectionDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C873817C2ACDD00BD8792 /* ConnectionDelegate.rb */; };
 		A50C873B17C2AD2B00BD8792 /* DataFetcher.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C873A17C2AD2B00BD8792 /* DataFetcher.rb */; };
-		A50C874117C2AD6700BD8792 /* TrayMenu.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C874017C2AD6700BD8792 /* TrayMenu.rb */; };
 		A50C874317C2ADDC00BD8792 /* ExtFixnum.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C874217C2ADDC00BD8792 /* ExtFixnum.rb */; };
+		A516F72D188DC1BE00FF6DC4 /* StatusBarMenuController.rb in Resources */ = {isa = PBXBuildFile; fileRef = A516F72C188DC1BE00FF6DC4 /* StatusBarMenuController.rb */; };
 		A5576793187F4F5B001775D9 /* NSApplicationLoginItems.m in Sources */ = {isa = PBXBuildFile; fileRef = A5576792187F4F5B001775D9 /* NSApplicationLoginItems.m */; };
 		A5657BF41880982A0038B44D /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = A5657BF31880982A0038B44D /* Credits.html */; };
 		A57FFE851815BDEE0030D87D /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A57FFE841815BDEE0030D87D /* Sparkle.framework */; };
@@ -69,8 +69,8 @@
 /* Begin PBXFileReference section */
 		A50C873817C2ACDD00BD8792 /* ConnectionDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ConnectionDelegate.rb; sourceTree = "<group>"; };
 		A50C873A17C2AD2B00BD8792 /* DataFetcher.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = DataFetcher.rb; sourceTree = "<group>"; };
-		A50C874017C2AD6700BD8792 /* TrayMenu.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = TrayMenu.rb; sourceTree = "<group>"; };
 		A50C874217C2ADDC00BD8792 /* ExtFixnum.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ExtFixnum.rb; sourceTree = "<group>"; };
+		A516F72C188DC1BE00FF6DC4 /* StatusBarMenuController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = StatusBarMenuController.rb; sourceTree = "<group>"; };
 		A5576791187F4F5B001775D9 /* NSApplicationLoginItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSApplicationLoginItems.h; sourceTree = "<group>"; };
 		A5576792187F4F5B001775D9 /* NSApplicationLoginItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSApplicationLoginItems.m; sourceTree = "<group>"; };
 		A5657BF31880982A0038B44D /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
@@ -168,6 +168,7 @@
 		A59D3F6717C2A34000988430 /* CIMenu */ = {
 			isa = PBXGroup;
 			children = (
+				A516F72C188DC1BE00FF6DC4 /* StatusBarMenuController.rb */,
 				A587EAD4188B2EDF00B88FC5 /* StatusBarItemController.rb */,
 				A50C874417C2B31800BD8792 /* Images */,
 				A59D3F7017C2A34100988430 /* Resources */,
@@ -176,7 +177,6 @@
 				A59D3F7717C2A34100988430 /* AppDelegate.rb */,
 				A50C873817C2ACDD00BD8792 /* ConnectionDelegate.rb */,
 				A50C873A17C2AD2B00BD8792 /* DataFetcher.rb */,
-				A50C874017C2AD6700BD8792 /* TrayMenu.rb */,
 				A50C874217C2ADDC00BD8792 /* ExtFixnum.rb */,
 			);
 			path = CIMenu;
@@ -308,7 +308,6 @@
 				A50C873917C2ACDD00BD8792 /* ConnectionDelegate.rb in Resources */,
 				A50C873B17C2AD2B00BD8792 /* DataFetcher.rb in Resources */,
 				A587EAD5188B2EDF00B88FC5 /* StatusBarItemController.rb in Resources */,
-				A50C874117C2AD6700BD8792 /* TrayMenu.rb in Resources */,
 				A50C874317C2ADDC00BD8792 /* ExtFixnum.rb in Resources */,
 				A5BA2DEE17C2B4EF009CB2CB /* 1.png in Resources */,
 				A5BA2DEF17C2B4EF009CB2CB /* 2.png in Resources */,
@@ -325,6 +324,7 @@
 				A5BA2DF817C2B4EF009CB2CB /* build_failed.png in Resources */,
 				A5BA2DF917C2B4EF009CB2CB /* build_passed.png in Resources */,
 				A5BA2DFA17C2B4EF009CB2CB /* gear_clicked.png in Resources */,
+				A516F72D188DC1BE00FF6DC4 /* StatusBarMenuController.rb in Resources */,
 				A5BA2DFB17C2B4EF009CB2CB /* gear_offline.png in Resources */,
 				A5BA2DFC17C2B4EF009CB2CB /* token_invalid.png in Resources */,
 				A5BA2DFD17C2B4EF009CB2CB /* token_valid.png in Resources */,

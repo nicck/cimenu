@@ -14,16 +14,6 @@ class StatusBarItemController
     @statusBar.menu = menu
   end
 
-  # def menuDidClose
-  #   @menuIsActive = false
-  #   showImage
-  # end
-
-  # def menuWillOpen
-  #   @menuIsActive = true
-  #   showImage
-  # end
-
   def connectionWillStartLoading(notification)
     startAnimation
   end

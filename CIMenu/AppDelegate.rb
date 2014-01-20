@@ -12,22 +12,20 @@ class AppDelegate
     @statusBarItemController.showImage
   end
 
-  attr_reader :trayMenu
   attr_accessor :preferencesWindow
   attr_accessor :tokenTextField
   attr_accessor :loginStartup
   attr_accessor :updater
 
   def applicationDidFinishLaunching(notification)
-    # statusBarMenuController = StatusBarMenuController.new
-    # mainMenu = statusBarMenuController.mainMenu
-    # @statusBarItemController.statusBarItemMenu = mainMenu
-
     puts 'applicationDidFinishLaunching'
 
-    @trayMenu = TrayMenu.new(self)
+    statusBarMenuController = StatusBarMenuController.new
+    statusBarMenuController.preferencesWindow = self.preferencesWindow
+    statusBarMenuController.updater = self.updater
+    statusBarMenuController.statusBarItemController = @statusBarItemController
 
-    @statusBarItemController.statusBarItemMenu = @trayMenu
+    @statusBarItemController.statusBarItemMenu = statusBarMenuController.mainMenu
 
     @dataFetcher = DataFetcher.new
     @dataFetcher.fetch
@@ -44,41 +42,8 @@ class AppDelegate
     showPreferences
   end
 
-  # from TrayMenu (via target action)
-  def checkForUpdates(sender)
-    updater.checkForUpdates(sender)
-  end
-
-  # from TrayMenu (via target action)
-  def showAboutPanel(sender)
-    NSApp.activateIgnoringOtherApps(true)
-    NSApp.orderFrontStandardAboutPanel(sender)
-  end
-
-  # from TrayMenu (via target action)
-  def quit(notification)
-    puts 'Bye!'
-    exit
-  end
-
-  # from TrayMenu (via target action)
-  def showPreferences(sender)
-    NSApp.activateIgnoringOtherApps(true)
-
-    tokenTextField.stringValue = apiKey unless apiKey.nil?
-    loginStartup.state = runAtLogin?
-
-    preferencesWindow.makeKeyAndOrderFront(sender)
-  end
-
   # from preferencesWindow (via delegate)
   def windowWillClose(notification)
-  end
-
-  # from TrayMenu (via target action)
-  def openBuild(menuItem)
-    url = NSURL.URLWithString(menuItem.url)
-    NSWorkspace.sharedWorkspace.openURL(url)
   end
 
   # from preferencesWindow Text Field (via delegate)
@@ -90,18 +55,6 @@ class AppDelegate
       self.apiKey = value
       @dataFetcher.fetch
     end
-  end
-
-  # from TrayMenu (via delegate)
-  def menuWillOpen(notification)
-    @statusBarItemController.menuIsActive = true
-    @statusBarItemController.showImage
-  end
-
-  # from TrayMenu (via delegate)
-  def menuDidClose(notification)
-    @statusBarItemController.menuIsActive = false
-    @statusBarItemController.showImage
   end
 
   def toggleRunAtStartup(sender)
