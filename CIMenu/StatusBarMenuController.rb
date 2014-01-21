@@ -65,12 +65,8 @@ class StatusBarMenuController
   end
 
   def showPreferences(sender)
-    NSApp.activateIgnoringOtherApps(true)
-
-    # tokenTextField.stringValue = apiKey unless apiKey.nil?
-    # loginStartup.state = runAtLogin?
-
-    preferencesWindow.makeKeyAndOrderFront(sender)
+    @preferencesWindowController ||= PreferencesWindowController.alloc.init
+    @preferencesWindowController.showWindow(self)
   end
 
   def checkForUpdates(sender)

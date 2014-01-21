@@ -3,6 +3,10 @@ class DataFetcher
   INTERVAL = 60
 
   def initialize
+    NSNotificationCenter.defaultCenter.addObserver(self,
+      selector:"fetch:",
+      name:"com.cimenu.CIMenu.preferences.token.changed",
+      object:nil)
   end
 
   def fetch(timer = nil)
