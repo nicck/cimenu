@@ -22,13 +22,15 @@ class StatusBarItemController
     stopAnimation
   end
 
-  def showImage
+  def showImage(new_image = nil)
+    self.image = new_image if new_image
     @statusBar.image = @menuIsActive ? alternateImage : image
   end
 
   # from timer
   def updateImage(timer)
-    @statusBar.image = imageForFrame(@animationFrame)
+    # @statusBar.image = imageForFrame(@animationFrame)
+    showImage imageForFrame(@animationFrame)
     @animationFrame = (@animationFrame == 9) ? 1 : @animationFrame + 1
   end
 
