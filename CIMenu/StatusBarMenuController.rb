@@ -171,8 +171,8 @@ class StatusBarMenuController
     branchFailedCount = project['branches'].count { |branch| branch['result'] == 'failed' }
     branchPendingCount = project['branches'].count { |branch| branch['result'] == 'pending' }
 
-    title = "%s\n%d branches: %d failed, %d passed" % [
-      projectName, branchCount, branchFailedCount, branchPassedCount
+    title = "%s\n%d branch%s: %d failed, %d passed" % [
+      projectName, branchCount, (branchCount > 1 ? 'es' : ''), branchFailedCount, branchPassedCount
     ]
     title << ", %d pending" % branchPendingCount if branchPendingCount > 0
 
