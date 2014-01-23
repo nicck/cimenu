@@ -169,9 +169,13 @@ class StatusBarMenuController
     branchCount = project['branches'].count
     branchPassedCount = project['branches'].count { |branch| branch['result'] == 'passed' }
     branchFailedCount = project['branches'].count { |branch| branch['result'] == 'failed' }
+    branchPendingCount = project['branches'].count { |branch| branch['result'] == 'pending' }
 
-    title = NSString.stringWithFormat "%@\n%@ branches: %@ failed, %@ passed",
+    title = "%s\n%d branches: %d failed, %d passed" % [
       projectName, branchCount, branchFailedCount, branchPassedCount
+    ]
+    title << ", %d pending" % branchPendingCount if branchPendingCount > 0
+
     attributedTitle = NSMutableAttributedString.alloc.initWithString(title)
 
     defaultOptions = { NSFontAttributeName => NSFont.fontWithName('Menlo', size: 10.0) }
@@ -182,6 +186,7 @@ class StatusBarMenuController
     branchPassedCountOptions = defaultOptions.merge({
       NSForegroundColorAttributeName => NSColor.colorWithSRGBRed(0, green:0.8, blue:0, alpha:1)
     })
+    branchPendingCountOptions = defaultOptions.merge NSForegroundColorAttributeName => NSColor.brownColor
 
     attributedTitle.addAttributes projectNameOptions, range:title.rangeOfString(projectName)
 
@@ -192,6 +197,12 @@ class StatusBarMenuController
     range_begin = title.rangeOfString("#{branchPassedCount} passed").location
     range = range_begin...(range_begin + branchPassedCount.to_s.size)
     attributedTitle.addAttributes branchPassedCountOptions, range:range
+
+    if branchPendingCount > 0
+      range_begin = title.rangeOfString("#{branchPendingCount} pending").location
+      range = range_begin...(range_begin + branchPassedCount.to_s.size)
+      attributedTitle.addAttributes branchPendingCountOptions, range:range
+    end
 
     attributedTitle
   end
