@@ -42,7 +42,9 @@ class StatusBarMenuController
 
       if branches.size > 0
         item = NSMenuItem.new
-        item.title = project['name']
+
+        # item.title = project['name']
+        item.attributedTitle = attributedTitleForProject(project)
 
         @mainMenu.addItem(item)
 
@@ -161,6 +163,38 @@ class StatusBarMenuController
     end
   end
 
+  def attributedTitleForProject(project)
+    projectName = project['name']
+
+    branchCount = project['branches'].count
+    branchPassedCount = project['branches'].count { |branch| branch['result'] == 'passed' }
+    branchFailedCount = project['branches'].count { |branch| branch['result'] == 'failed' }
+
+    title = NSString.stringWithFormat "%@\n%@ branches: %@ failed, %@ passed",
+      projectName, branchCount, branchFailedCount, branchPassedCount
+    attributedTitle = NSMutableAttributedString.alloc.initWithString(title)
+
+    defaultOptions = { NSFontAttributeName => NSFont.fontWithName('Menlo', size: 10.0) }
+    projectNameOptions = defaultOptions.merge({
+      NSFontAttributeName => NSFont.fontWithName("Lucida Grande", size: 15.0)
+    })
+    branchFailedCountOptions = defaultOptions.merge NSForegroundColorAttributeName => NSColor.redColor
+    branchPassedCountOptions = defaultOptions.merge({
+      NSForegroundColorAttributeName => NSColor.colorWithSRGBRed(0, green:0.8, blue:0, alpha:1)
+    })
+
+    attributedTitle.addAttributes projectNameOptions, range:title.rangeOfString(projectName)
+
+    range_begin = title.rangeOfString("#{branchFailedCount} failed").location
+    range = range_begin...(range_begin + branchFailedCount.to_s.size)
+    attributedTitle.addAttributes branchFailedCountOptions, range:range
+
+    range_begin = title.rangeOfString("#{branchPassedCount} passed").location
+    range = range_begin...(range_begin + branchPassedCount.to_s.size)
+    attributedTitle.addAttributes branchPassedCountOptions, range:range
+
+    attributedTitle
+  end
 end
 
 class BuildMenuItem < NSMenuItem
