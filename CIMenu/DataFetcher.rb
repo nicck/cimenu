@@ -12,8 +12,13 @@ class DataFetcher
   def fetch(timer = nil)
     request = NSMutableURLRequest.requestWithURL(url)
 
-    NSURLConnection.connectionWithRequest(request,
-      delegate:ConnectionDelegate.new)
+    NSURLConnection.connectionWithRequest(request, delegate:ConnectionDelegate.new)
+
+    # connection = NSURLConnection.alloc.initWithRequest request,
+    #   delegate:ConnectionDelegate.new,
+    #   startImmediately:false
+    # connection.scheduleInRunLoop NSRunLoop.mainRunLoop, forMode:NSRunLoopCommonModes
+    # connection.start
   end
 
   def startTimer
@@ -22,6 +27,7 @@ class DataFetcher
       selector:'fetch:',
       userInfo:nil,
       repeats:true
+    # NSRunLoop.mainRunLoop.addTimer @timer, forMode:NSRunLoopCommonModes
   end
 
   def stopTimer
