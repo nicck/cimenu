@@ -67,8 +67,7 @@ class StatusBarMenuController
   end
 
   def showPreferences(sender)
-    @preferencesWindowController ||= PreferencesWindowController.alloc.init
-    @preferencesWindowController.showWindow(self)
+    preferencesWindowController.showWindow(self)
   end
 
   def checkForUpdates(sender)
@@ -86,6 +85,17 @@ class StatusBarMenuController
   end
 
   private
+
+  def preferencesWindowController
+    generalViewController = GeneralPreferencesViewController.alloc.init
+    # advancedViewController = AdvancedPreferencesViewController.alloc.init
+
+    PreferencesWindowController.alloc.initWithViewControllers(
+      # [generalViewController, nil, advancedViewController],
+      [generalViewController],
+      title:'Preferences'
+    )
+  end
 
   def subscribeToConnectionEvents
     NSNotificationCenter.defaultCenter.addObserver(self,
@@ -149,9 +159,32 @@ class StatusBarMenuController
       item.title = truncate(branch['branch_name'], 32)
       item.target = self
       item.action = 'openBuild:'
-      item.image = NSImage.imageNamed "build_#{branch['result']}.png"
+      item.image = imageForBranch(branch)
 
       @mainMenu.addItem(item)
+    end
+  end
+
+  def imageForBranch(branch)
+    state = branch['result']
+
+    # cool old school :)
+    case state
+    when 'passed'
+      NSImage.imageNamed NSImageNameStatusAvailable
+    when 'failed'
+      NSImage.imageNamed NSImageNameStatusUnavailable
+    when 'pending'
+      NSImage.imageNamed NSImageNameStatusPartiallyAvailable
+    else
+      NSImage.imageNamed NSImageNameStatusNone
+    end
+
+    case state
+    when 'passed', 'failed', 'pending'
+      NSImage.imageNamed "build_#{state}.png"
+    else
+      NSImage.imageNamed NSImageNameStatusNone
     end
   end
 

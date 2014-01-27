@@ -1,5 +1,6 @@
 class DataFetcher
   URL = "https://semaphoreapp.com/api/v1/projects?auth_token="
+  #URL = "http://localhost/projects.json?auth_token="
   INTERVAL = 60
 
   def initialize

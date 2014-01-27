@@ -12,13 +12,21 @@
 		A50C874317C2ADDC00BD8792 /* ExtFixnum.rb in Resources */ = {isa = PBXBuildFile; fileRef = A50C874217C2ADDC00BD8792 /* ExtFixnum.rb */; };
 		A516F72D188DC1BE00FF6DC4 /* StatusBarMenuController.rb in Resources */ = {isa = PBXBuildFile; fileRef = A516F72C188DC1BE00FF6DC4 /* StatusBarMenuController.rb */; };
 		A516F72F188E603500FF6DC4 /* PreferencesWindowController.rb in Resources */ = {isa = PBXBuildFile; fileRef = A516F72E188E603500FF6DC4 /* PreferencesWindowController.rb */; };
-		A516F733188E62EE00FF6DC4 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A516F732188E62EE00FF6DC4 /* PreferencesWindow.xib */; };
-		A5576793187F4F5B001775D9 /* NSApplicationLoginItems.m in Sources */ = {isa = PBXBuildFile; fileRef = A5576792187F4F5B001775D9 /* NSApplicationLoginItems.m */; };
+		A52987FF1893012B009F65F5 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = A52987F81893012B009F65F5 /* LICENSE.md */; };
+		A52988001893012B009F65F5 /* MASPreferences.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A52987F91893012B009F65F5 /* MASPreferences.podspec */; };
+		A52988011893012B009F65F5 /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52987FB1893012B009F65F5 /* MASPreferencesWindow.xib */; };
+		A52988021893012B009F65F5 /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52987FD1893012B009F65F5 /* MASPreferencesWindowController.m */; };
+		A52988031893012B009F65F5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A52987FE1893012B009F65F5 /* README.md */; };
+		A5298806189307E6009F65F5 /* AdvancedPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5298804189307E6009F65F5 /* AdvancedPreferencesView.xib */; };
+		A5298807189307E6009F65F5 /* GeneralPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5298805189307E6009F65F5 /* GeneralPreferencesView.xib */; };
 		A5657BF41880982A0038B44D /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = A5657BF31880982A0038B44D /* Credits.html */; };
 		A57FFE851815BDEE0030D87D /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A57FFE841815BDEE0030D87D /* Sparkle.framework */; };
 		A57FFE871815BE540030D87D /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A57FFE841815BDEE0030D87D /* Sparkle.framework */; };
 		A57FFE891815D21E0030D87D /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = A57FFE881815D21E0030D87D /* dsa_pub.pem */; };
 		A587EAD5188B2EDF00B88FC5 /* StatusBarItemController.rb in Resources */ = {isa = PBXBuildFile; fileRef = A587EAD4188B2EDF00B88FC5 /* StatusBarItemController.rb */; };
+		A58B23C21896EB2F000DC699 /* AdvancedPreferencesViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = A58B23C01896EB2F000DC699 /* AdvancedPreferencesViewController.rb */; };
+		A58B23C31896EB2F000DC699 /* GeneralPreferencesViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = A58B23C11896EB2F000DC699 /* GeneralPreferencesViewController.rb */; };
+		A58B23C71896EDAF000DC699 /* NSApplicationLoginItems.m in Sources */ = {isa = PBXBuildFile; fileRef = A58B23C61896EDAF000DC699 /* NSApplicationLoginItems.m */; };
 		A59D3F6117C2A34000988430 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59D3F6017C2A34000988430 /* Cocoa.framework */; };
 		A59D3F6317C2A34000988430 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59D3F6217C2A34000988430 /* MacRuby.framework */; };
 		A59D3F6C17C2A34000988430 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A59D3F6A17C2A34000988430 /* InfoPlist.strings */; };
@@ -74,13 +82,23 @@
 		A50C874217C2ADDC00BD8792 /* ExtFixnum.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ExtFixnum.rb; sourceTree = "<group>"; };
 		A516F72C188DC1BE00FF6DC4 /* StatusBarMenuController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = StatusBarMenuController.rb; sourceTree = "<group>"; };
 		A516F72E188E603500FF6DC4 /* PreferencesWindowController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = PreferencesWindowController.rb; sourceTree = "<group>"; };
-		A516F732188E62EE00FF6DC4 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
-		A5576791187F4F5B001775D9 /* NSApplicationLoginItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSApplicationLoginItems.h; sourceTree = "<group>"; };
-		A5576792187F4F5B001775D9 /* NSApplicationLoginItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSApplicationLoginItems.m; sourceTree = "<group>"; };
-		A5657BF31880982A0038B44D /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		A52987F81893012B009F65F5 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
+		A52987F91893012B009F65F5 /* MASPreferences.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MASPreferences.podspec; sourceTree = "<group>"; };
+		A52987FA1893012B009F65F5 /* MASPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesViewController.h; sourceTree = "<group>"; };
+		A52987FB1893012B009F65F5 /* MASPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASPreferencesWindow.xib; sourceTree = "<group>"; };
+		A52987FC1893012B009F65F5 /* MASPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesWindowController.h; sourceTree = "<group>"; };
+		A52987FD1893012B009F65F5 /* MASPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASPreferencesWindowController.m; sourceTree = "<group>"; };
+		A52987FE1893012B009F65F5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		A5298804189307E6009F65F5 /* AdvancedPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AdvancedPreferencesView.xib; path = Resources/AdvancedPreferencesView.xib; sourceTree = "<group>"; };
+		A5298805189307E6009F65F5 /* GeneralPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GeneralPreferencesView.xib; path = Resources/GeneralPreferencesView.xib; sourceTree = "<group>"; };
+		A5657BF31880982A0038B44D /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Credits.html; path = Resources/Credits.html; sourceTree = "<group>"; };
 		A57FFE841815BDEE0030D87D /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
-		A57FFE881815D21E0030D87D /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		A57FFE881815D21E0030D87D /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = Resources/dsa_pub.pem; sourceTree = "<group>"; };
 		A587EAD4188B2EDF00B88FC5 /* StatusBarItemController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = StatusBarItemController.rb; sourceTree = "<group>"; };
+		A58B23C01896EB2F000DC699 /* AdvancedPreferencesViewController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AdvancedPreferencesViewController.rb; sourceTree = "<group>"; };
+		A58B23C11896EB2F000DC699 /* GeneralPreferencesViewController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = GeneralPreferencesViewController.rb; sourceTree = "<group>"; };
+		A58B23C51896EDAF000DC699 /* NSApplicationLoginItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSApplicationLoginItems.h; sourceTree = "<group>"; };
+		A58B23C61896EDAF000DC699 /* NSApplicationLoginItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSApplicationLoginItems.m; sourceTree = "<group>"; };
 		A59D3F5D17C2A34000988430 /* CIMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59D3F6017C2A34000988430 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A59D3F6217C2A34000988430 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
@@ -107,7 +125,7 @@
 		A5BA2DEB17C2B4EF009CB2CB /* gear_offline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear_offline.png; sourceTree = "<group>"; };
 		A5BA2DEC17C2B4EF009CB2CB /* token_invalid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = token_invalid.png; sourceTree = "<group>"; };
 		A5BA2DED17C2B4EF009CB2CB /* token_valid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = token_valid.png; sourceTree = "<group>"; };
-		A5BA2DFE17C2BC9D009CB2CB /* CIMenu.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = CIMenu.icns; sourceTree = "<group>"; };
+		A5BA2DFE17C2BC9D009CB2CB /* CIMenu.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CIMenu.icns; path = Resources/CIMenu.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,11 +157,35 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		A52987F71893012B009F65F5 /* MASPreferences */ = {
+			isa = PBXGroup;
+			children = (
+				A52987F81893012B009F65F5 /* LICENSE.md */,
+				A52987F91893012B009F65F5 /* MASPreferences.podspec */,
+				A52987FA1893012B009F65F5 /* MASPreferencesViewController.h */,
+				A52987FB1893012B009F65F5 /* MASPreferencesWindow.xib */,
+				A52987FC1893012B009F65F5 /* MASPreferencesWindowController.h */,
+				A52987FD1893012B009F65F5 /* MASPreferencesWindowController.m */,
+				A52987FE1893012B009F65F5 /* README.md */,
+			);
+			path = MASPreferences;
+			sourceTree = "<group>";
+		};
+		A58B23C41896EDAF000DC699 /* NSApplicationLoginItems */ = {
+			isa = PBXGroup;
+			children = (
+				A58B23C51896EDAF000DC699 /* NSApplicationLoginItems.h */,
+				A58B23C61896EDAF000DC699 /* NSApplicationLoginItems.m */,
+			);
+			path = NSApplicationLoginItems;
+			sourceTree = "<group>";
+		};
 		A59D3F5417C2A34000988430 = {
 			isa = PBXGroup;
 			children = (
-				A5BA2DFE17C2BC9D009CB2CB /* CIMenu.icns */,
 				A59D3F6717C2A34000988430 /* CIMenu */,
+				A58B23C41896EDAF000DC699 /* NSApplicationLoginItems */,
+				A52987F71893012B009F65F5 /* MASPreferences */,
 				A59D3F5F17C2A34000988430 /* Frameworks */,
 				A59D3F5E17C2A34000988430 /* Products */,
 			);
@@ -172,12 +214,13 @@
 		A59D3F6717C2A34000988430 /* CIMenu */ = {
 			isa = PBXGroup;
 			children = (
+				A58B23C01896EB2F000DC699 /* AdvancedPreferencesViewController.rb */,
+				A58B23C11896EB2F000DC699 /* GeneralPreferencesViewController.rb */,
 				A516F72E188E603500FF6DC4 /* PreferencesWindowController.rb */,
 				A516F72C188DC1BE00FF6DC4 /* StatusBarMenuController.rb */,
 				A587EAD4188B2EDF00B88FC5 /* StatusBarItemController.rb */,
 				A50C874417C2B31800BD8792 /* Images */,
 				A59D3F7017C2A34100988430 /* Resources */,
-				A59D3F7417C2A34100988430 /* Other Sources */,
 				A59D3F6817C2A34000988430 /* Supporting Files */,
 				A59D3F7717C2A34100988430 /* AppDelegate.rb */,
 				A50C873817C2ACDD00BD8792 /* ConnectionDelegate.rb */,
@@ -192,6 +235,7 @@
 			children = (
 				A59D3F6917C2A34000988430 /* CIMenu-Info.plist */,
 				A59D3F6A17C2A34000988430 /* InfoPlist.strings */,
+				A59D3F7517C2A34100988430 /* rb_main.rb */,
 				A59D3F6D17C2A34000988430 /* main.m */,
 				A59D3F6F17C2A34000988430 /* CIMenu-Prefix.pch */,
 			);
@@ -201,22 +245,14 @@
 		A59D3F7017C2A34100988430 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A5298804189307E6009F65F5 /* AdvancedPreferencesView.xib */,
+				A5298805189307E6009F65F5 /* GeneralPreferencesView.xib */,
 				A5657BF31880982A0038B44D /* Credits.html */,
 				A57FFE881815D21E0030D87D /* dsa_pub.pem */,
 				A59D3F7117C2A34100988430 /* MainMenu.xib */,
-				A516F732188E62EE00FF6DC4 /* PreferencesWindow.xib */,
+				A5BA2DFE17C2BC9D009CB2CB /* CIMenu.icns */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		A59D3F7417C2A34100988430 /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				A5576791187F4F5B001775D9 /* NSApplicationLoginItems.h */,
-				A5576792187F4F5B001775D9 /* NSApplicationLoginItems.m */,
-				A59D3F7517C2A34100988430 /* rb_main.rb */,
-			);
-			name = "Other Sources";
 			sourceTree = "<group>";
 		};
 		A5BA2DDD17C2B4EF009CB2CB /* animation */ = {
@@ -307,13 +343,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5298806189307E6009F65F5 /* AdvancedPreferencesView.xib in Resources */,
 				A59D3F6C17C2A34000988430 /* InfoPlist.strings in Resources */,
 				A59D3F7317C2A34100988430 /* MainMenu.xib in Resources */,
 				A59D3F7617C2A34100988430 /* rb_main.rb in Resources */,
 				A59D3F7817C2A34100988430 /* AppDelegate.rb in Resources */,
+				A52987FF1893012B009F65F5 /* LICENSE.md in Resources */,
+				A52988001893012B009F65F5 /* MASPreferences.podspec in Resources */,
 				A50C873917C2ACDD00BD8792 /* ConnectionDelegate.rb in Resources */,
 				A50C873B17C2AD2B00BD8792 /* DataFetcher.rb in Resources */,
 				A587EAD5188B2EDF00B88FC5 /* StatusBarItemController.rb in Resources */,
+				A5298807189307E6009F65F5 /* GeneralPreferencesView.xib in Resources */,
 				A50C874317C2ADDC00BD8792 /* ExtFixnum.rb in Resources */,
 				A5BA2DEE17C2B4EF009CB2CB /* 1.png in Resources */,
 				A5BA2DEF17C2B4EF009CB2CB /* 2.png in Resources */,
@@ -323,15 +363,18 @@
 				A5BA2DF217C2B4EF009CB2CB /* 5.png in Resources */,
 				A5BA2DF317C2B4EF009CB2CB /* 6.png in Resources */,
 				A516F72F188E603500FF6DC4 /* PreferencesWindowController.rb in Resources */,
-				A516F733188E62EE00FF6DC4 /* PreferencesWindow.xib in Resources */,
 				A5BA2DF417C2B4EF009CB2CB /* 7.png in Resources */,
 				A5657BF41880982A0038B44D /* Credits.html in Resources */,
 				A5BA2DF517C2B4EF009CB2CB /* 8.png in Resources */,
 				A5BA2DF617C2B4EF009CB2CB /* 9.png in Resources */,
+				A52988011893012B009F65F5 /* MASPreferencesWindow.xib in Resources */,
 				A5BA2DF717C2B4EF009CB2CB /* build_pending.png in Resources */,
 				A5BA2DF817C2B4EF009CB2CB /* build_failed.png in Resources */,
 				A5BA2DF917C2B4EF009CB2CB /* build_passed.png in Resources */,
 				A5BA2DFA17C2B4EF009CB2CB /* gear_clicked.png in Resources */,
+				A58B23C21896EB2F000DC699 /* AdvancedPreferencesViewController.rb in Resources */,
+				A52988031893012B009F65F5 /* README.md in Resources */,
+				A58B23C31896EB2F000DC699 /* GeneralPreferencesViewController.rb in Resources */,
 				A516F72D188DC1BE00FF6DC4 /* StatusBarMenuController.rb in Resources */,
 				A5BA2DFB17C2B4EF009CB2CB /* gear_offline.png in Resources */,
 				A5BA2DFC17C2B4EF009CB2CB /* token_invalid.png in Resources */,
@@ -363,8 +406,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A58B23C71896EDAF000DC699 /* NSApplicationLoginItems.m in Sources */,
 				A59D3F6E17C2A34000988430 /* main.m in Sources */,
-				A5576793187F4F5B001775D9 /* NSApplicationLoginItems.m in Sources */,
+				A52988021893012B009F65F5 /* MASPreferencesWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
