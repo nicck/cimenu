@@ -27,6 +27,7 @@
 		A58B23C21896EB2F000DC699 /* AdvancedPreferencesViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = A58B23C01896EB2F000DC699 /* AdvancedPreferencesViewController.rb */; };
 		A58B23C31896EB2F000DC699 /* GeneralPreferencesViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = A58B23C11896EB2F000DC699 /* GeneralPreferencesViewController.rb */; };
 		A58B23C71896EDAF000DC699 /* NSApplicationLoginItems.m in Sources */ = {isa = PBXBuildFile; fileRef = A58B23C61896EDAF000DC699 /* NSApplicationLoginItems.m */; };
+		A58B23CB1896F471000DC699 /* MenuItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A58B23CA1896F471000DC699 /* MenuItemView.xib */; };
 		A59D3F6117C2A34000988430 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59D3F6017C2A34000988430 /* Cocoa.framework */; };
 		A59D3F6317C2A34000988430 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59D3F6217C2A34000988430 /* MacRuby.framework */; };
 		A59D3F6C17C2A34000988430 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A59D3F6A17C2A34000988430 /* InfoPlist.strings */; };
@@ -51,6 +52,7 @@
 		A5BA2DFC17C2B4EF009CB2CB /* token_invalid.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DEC17C2B4EF009CB2CB /* token_invalid.png */; };
 		A5BA2DFD17C2B4EF009CB2CB /* token_valid.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DED17C2B4EF009CB2CB /* token_valid.png */; };
 		A5BA2DFF17C2BC9D009CB2CB /* CIMenu.icns in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DFE17C2BC9D009CB2CB /* CIMenu.icns */; };
+		A5C46682189D237F003445B7 /* MenuItemView.rb in Resources */ = {isa = PBXBuildFile; fileRef = A5C46681189D237F003445B7 /* MenuItemView.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,7 @@
 		A58B23C11896EB2F000DC699 /* GeneralPreferencesViewController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = GeneralPreferencesViewController.rb; sourceTree = "<group>"; };
 		A58B23C51896EDAF000DC699 /* NSApplicationLoginItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSApplicationLoginItems.h; sourceTree = "<group>"; };
 		A58B23C61896EDAF000DC699 /* NSApplicationLoginItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSApplicationLoginItems.m; sourceTree = "<group>"; };
+		A58B23CA1896F471000DC699 /* MenuItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuItemView.xib; path = Resources/MenuItemView.xib; sourceTree = "<group>"; };
 		A59D3F5D17C2A34000988430 /* CIMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59D3F6017C2A34000988430 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A59D3F6217C2A34000988430 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
@@ -126,6 +129,7 @@
 		A5BA2DEC17C2B4EF009CB2CB /* token_invalid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = token_invalid.png; sourceTree = "<group>"; };
 		A5BA2DED17C2B4EF009CB2CB /* token_valid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = token_valid.png; sourceTree = "<group>"; };
 		A5BA2DFE17C2BC9D009CB2CB /* CIMenu.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CIMenu.icns; path = Resources/CIMenu.icns; sourceTree = "<group>"; };
+		A5C46681189D237F003445B7 /* MenuItemView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = MenuItemView.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +218,7 @@
 		A59D3F6717C2A34000988430 /* CIMenu */ = {
 			isa = PBXGroup;
 			children = (
+				A5C46681189D237F003445B7 /* MenuItemView.rb */,
 				A58B23C01896EB2F000DC699 /* AdvancedPreferencesViewController.rb */,
 				A58B23C11896EB2F000DC699 /* GeneralPreferencesViewController.rb */,
 				A516F72E188E603500FF6DC4 /* PreferencesWindowController.rb */,
@@ -251,6 +256,7 @@
 				A57FFE881815D21E0030D87D /* dsa_pub.pem */,
 				A59D3F7117C2A34100988430 /* MainMenu.xib */,
 				A5BA2DFE17C2BC9D009CB2CB /* CIMenu.icns */,
+				A58B23CA1896F471000DC699 /* MenuItemView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -368,7 +374,9 @@
 				A5BA2DF517C2B4EF009CB2CB /* 8.png in Resources */,
 				A5BA2DF617C2B4EF009CB2CB /* 9.png in Resources */,
 				A52988011893012B009F65F5 /* MASPreferencesWindow.xib in Resources */,
+				A5C46682189D237F003445B7 /* MenuItemView.rb in Resources */,
 				A5BA2DF717C2B4EF009CB2CB /* build_pending.png in Resources */,
+				A58B23CB1896F471000DC699 /* MenuItemView.xib in Resources */,
 				A5BA2DF817C2B4EF009CB2CB /* build_failed.png in Resources */,
 				A5BA2DF917C2B4EF009CB2CB /* build_passed.png in Resources */,
 				A5BA2DFA17C2B4EF009CB2CB /* gear_clicked.png in Resources */,

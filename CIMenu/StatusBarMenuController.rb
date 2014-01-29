@@ -84,6 +84,10 @@ class StatusBarMenuController
     statusBarItemController.showImage
   end
 
+  def menu(menu, willHighlightItem:item)
+    p item
+  end
+
   private
 
   def preferencesWindowController
@@ -160,6 +164,8 @@ class StatusBarMenuController
       item.target = self
       item.action = 'openBuild:'
       item.image = imageForBranch(branch)
+
+      item.view = MenuItemViewController.alloc.initWithBranch(branch).view
 
       @mainMenu.addItem(item)
     end
@@ -243,4 +249,60 @@ end
 
 class BuildMenuItem < NSMenuItem
   attr_accessor :url
+end
+
+class MenuItemViewController < NSViewController
+  attr_accessor :imageView, :labelView
+
+  def init
+    initWithNibName('MenuItemView', bundle:nil)
+  end
+
+  def initWithBranch(branch)
+    @branch = branch
+    init
+  end
+
+  def loadView
+    super
+
+    title = truncate(@branch['branch_name'], 32)
+    image = imageForBranch(@branch)
+
+    imageView.image = image
+    labelView.stringValue = title
+  end
+
+  private
+
+  def imageForBranch(branch)
+    state = branch['result']
+
+    # cool old school :)
+    case state
+    when 'passed'
+      NSImage.imageNamed NSImageNameStatusAvailable
+    when 'failed'
+      NSImage.imageNamed NSImageNameStatusUnavailable
+    when 'pending'
+      NSImage.imageNamed NSImageNameStatusPartiallyAvailable
+    else
+      NSImage.imageNamed NSImageNameStatusNone
+    end
+
+    case state
+    when 'passed', 'failed', 'pending'
+      NSImage.imageNamed "build_#{state}.png"
+    else
+      NSImage.imageNamed NSImageNameStatusNone
+    end
+  end
+
+  def truncate(branch_name, length)
+    if branch_name.length > length
+      "#{branch_name[0..length / 2 - 1]}...#{branch_name[-length / 2..-1]}"
+    else
+      branch_name
+    end
+  end
 end
