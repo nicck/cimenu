@@ -30,3 +30,14 @@ class AppDelegate
     dataFetcher.startTimer
   end
 end
+
+class CmdVTextField < NSTextField
+  def performKeyEquivalent(event)
+    if (event.modifierFlags & NSDeviceIndependentModifierFlagsMask) == NSCommandKeyMask
+      if event.charactersIgnoringModifiers.isEqualToString("v")
+        NSApp.sendAction("paste:", to:self.window.firstResponder, from:self)
+      end
+    end
+    super
+  end
+end

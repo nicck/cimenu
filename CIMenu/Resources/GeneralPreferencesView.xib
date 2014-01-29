@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="152"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <textField verticalHuggingPriority="750" id="ISh-Yv-tgB">
+                <textField verticalHuggingPriority="750" id="ISh-Yv-tgB" customClass="CmdVTextField">
                     <rect key="frame" x="20" y="110" width="440" height="22"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Authentication token" drawsBackground="YES" id="QRk-Ox-0z9">
@@ -54,5 +54,14 @@ e.g.: https://semaphoreapp.com/projects/123/api</string>
                 </button>
             </subviews>
         </view>
+        <menu id="LPa-sc-aFK">
+            <items>
+                <menuItem title="Paste" keyEquivalent="v" id="Iym-LX-xX0">
+                    <connections>
+                        <action selector="paste:" target="-1" id="SrT-gT-Php"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
     </objects>
 </document>
