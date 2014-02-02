@@ -86,9 +86,18 @@ class StatusBarMenuController
 
   def menu(menu, willHighlightItem:item)
     p item
+    if item && item.view
+      menuItemView = item.view
+      branchDetailsViewController.showNearView menuItemView
+    end
+
   end
 
   private
+
+  def branchDetailsViewController
+    @branchDetailsViewController ||= BranchDetailsViewController.alloc.init
+  end
 
   def preferencesWindowController
     generalViewController = GeneralPreferencesViewController.alloc.init
@@ -306,3 +315,53 @@ class MenuItemViewController < NSViewController
     end
   end
 end
+
+require "digest/md5"
+class BranchDetailsViewController < NSViewController
+  attr_accessor :textField, :imageView
+
+  def init
+    initWithNibName('BranchDetailsView', bundle:nil)
+  end
+
+  def showNearView(menuItemView)
+    # view.setFrameSize([300, 100+rand(200)])
+    # popover.contentSize = view.frame.size
+
+    popover.showRelativeToRect menuItemView.bounds, # frame
+      ofView:menuItemView,
+      preferredEdge:NSMinXEdge
+
+    email = 'nicck.olay@gmail.com'
+    md5hex = Digest::MD5.hexdigest(email)
+    # url = NSURL.URLWithString "https://identicons.github.com/nicck.png"
+    url = NSURL.URLWithString "http://2.gravatar.com/avatar/#{md5hex}.png"
+    image = NSImage.alloc.initWithContentsOfURL(url)
+
+    imageView.image = image
+  end
+
+  # def viewDidLoad
+  #   textField.stringValue = Time.now.to_s * (rand(3)+1)
+  #   textField.sizeToFit
+  # end
+
+  def close
+    popover.close
+  end
+
+  private
+
+  def popover
+    @popover ||= begin
+      popover = NSPopover.alloc.init
+
+      popover.behavior = NSPopoverBehaviorApplicationDefined # NSPopoverBehaviorSemitransient # NSPopoverBehaviorTransient
+      popover.animates = true
+      popover.contentViewController = self
+
+      popover
+    end
+  end
+end
+

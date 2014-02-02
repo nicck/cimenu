@@ -53,6 +53,7 @@
 		A5BA2DFD17C2B4EF009CB2CB /* token_valid.png in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DED17C2B4EF009CB2CB /* token_valid.png */; };
 		A5BA2DFF17C2BC9D009CB2CB /* CIMenu.icns in Resources */ = {isa = PBXBuildFile; fileRef = A5BA2DFE17C2BC9D009CB2CB /* CIMenu.icns */; };
 		A5C46682189D237F003445B7 /* MenuItemView.rb in Resources */ = {isa = PBXBuildFile; fileRef = A5C46681189D237F003445B7 /* MenuItemView.rb */; };
+		A5C46684189D8206003445B7 /* BranchDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5C46683189D8206003445B7 /* BranchDetailsView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		A5BA2DED17C2B4EF009CB2CB /* token_valid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = token_valid.png; sourceTree = "<group>"; };
 		A5BA2DFE17C2BC9D009CB2CB /* CIMenu.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CIMenu.icns; path = Resources/CIMenu.icns; sourceTree = "<group>"; };
 		A5C46681189D237F003445B7 /* MenuItemView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = MenuItemView.rb; sourceTree = "<group>"; };
+		A5C46683189D8206003445B7 /* BranchDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BranchDetailsView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 				A59D3F7117C2A34100988430 /* MainMenu.xib */,
 				A5BA2DFE17C2BC9D009CB2CB /* CIMenu.icns */,
 				A58B23CA1896F471000DC699 /* MenuItemView.xib */,
+				A5C46683189D8206003445B7 /* BranchDetailsView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				A5BA2DF717C2B4EF009CB2CB /* build_pending.png in Resources */,
 				A58B23CB1896F471000DC699 /* MenuItemView.xib in Resources */,
 				A5BA2DF817C2B4EF009CB2CB /* build_failed.png in Resources */,
+				A5C46684189D8206003445B7 /* BranchDetailsView.xib in Resources */,
 				A5BA2DF917C2B4EF009CB2CB /* build_passed.png in Resources */,
 				A5BA2DFA17C2B4EF009CB2CB /* gear_clicked.png in Resources */,
 				A58B23C21896EB2F000DC699 /* AdvancedPreferencesViewController.rb in Resources */,
@@ -519,7 +523,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CIMenu/CIMenu-Prefix.pch";
 				INFOPLIST_FILE = "CIMenu/CIMenu-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VERSIONING_SYSTEM = "";
 				WRAPPER_EXTENSION = app;
@@ -540,7 +544,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CIMenu/CIMenu-Prefix.pch";
 				INFOPLIST_FILE = "CIMenu/CIMenu-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VERSIONING_SYSTEM = "";
 				WRAPPER_EXTENSION = app;
