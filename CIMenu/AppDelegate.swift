@@ -9,18 +9,25 @@
 import Cocoa
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-                            
-    @IBOutlet var window: NSWindow
+    //    @IBOutlet var window: NSWindow
+    
+    let statusBarItemController = StatusBarItemController()
+    let statusBarMenuController = StatusBarMenuController()
 
-
+    func applicationWillFinishLaunching(aNotification: NSNotification?) {
+        println("applicationWillFinishLaunching")
+        statusBarItemController.statusBarItemMenu = statusBarMenuController.mainMenu
+    }
+    
     func applicationDidFinishLaunching(aNotification: NSNotification?) {
-        // Insert code here to initialize your application
+        println("applicationDidFinishLaunching")
+        statusBarItemController.showImage()
+//        statusBarMenuController.updater = self.updater
+//        statusBarMenuController.statusBarItemController = statusBarItemController
     }
 
     func applicationWillTerminate(aNotification: NSNotification?) {
-        // Insert code here to tear down your application
+        println("applicationWillTerminate")
     }
-
-
 }
 

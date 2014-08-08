@@ -1,0 +1,37 @@
+import Cocoa
+
+class PreferencesWindowController: NSWindowController, NSTextFieldDelegate {
+    let defaults = NSUserDefaults.standardUserDefaults()
+
+    @IBOutlet var tokenTextField : NSTextField
+    @IBOutlet var startCheckBox : NSButton
+    
+//    func windowWillLoad()
+    override func windowDidLoad() {
+        if let apiKey : AnyObject! = defaults.objectForKey("org.cimenu.apikey") {
+            tokenTextField.stringValue = apiKey as NSString
+        }
+        
+        //    startCheckBox.state = runAtLogin?
+    }
+    
+
+    override func controlTextDidChange(notification : NSNotification!) {
+        let value = notification.object.stringValue
+
+        if (value as NSString).length == 20 {
+            println("controlTextDidChange and length is 20: \(value)")
+            defaults.setObject(value, forKey: "org.cimenu.apikey")
+            defaults.synchronize()
+        }
+//
+//        NSNotificationCenter.defaultCenter.postNotificationName(
+//          'com.cimenu.CIMenu.preferences.token.changed',
+//          object:nil,
+//          userInfo:value)
+
+    }
+
+    //    @IBAction func zee(notification : NSNotification) {
+
+}
