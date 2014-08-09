@@ -11,8 +11,12 @@ class PreferencesWindowController: NSWindowController, NSTextFieldDelegate {
         if let apiKey : AnyObject! = defaults.objectForKey("org.cimenu.apikey") {
             tokenTextField.stringValue = apiKey as NSString
         }
-        
-        //    startCheckBox.state = runAtLogin?
+
+        if NSApp.isInLoginItems() {
+            startCheckBox.state = NSOnState
+        } else {
+            startCheckBox.state = NSOffState
+        }
     }
     
 
@@ -32,6 +36,14 @@ class PreferencesWindowController: NSWindowController, NSTextFieldDelegate {
 
     }
 
-    //    @IBAction func zee(notification : NSNotification) {
+    @IBAction func toggleRunAtStartup(sender : NSButton) {
+        if sender.state == NSOnState {
+            println("NSApp.addToLoginItems")
+            NSApp.addToLoginItems()
+        } else {
+            println("NSApp.removeFromLoginItems")
+            NSApp.removeFromLoginItems()
+        }
+    }
 
 }

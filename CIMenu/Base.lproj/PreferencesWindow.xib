@@ -52,6 +52,9 @@
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="toggleRunAtStartup:" target="-2" id="LOX-uT-IzX"/>
+                        </connections>
                     </button>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" id="Uo5-nL-Cpf">
                         <rect key="frame" x="18" y="51" width="446" height="51"/>
