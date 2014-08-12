@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A553174C1996CD7D004675EA /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = A553174B1996CD7D004675EA /* Project.swift */; };
 		A57B45D3194648BF00DE00B0 /* StatusBarMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B45D2194648BF00DE00B0 /* StatusBarMenuController.swift */; };
 		A59BD29C194501A800562329 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59BD29B194501A800562329 /* main.swift */; };
 		A59BD29E194501A800562329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59BD29D194501A800562329 /* AppDelegate.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A553174B1996CD7D004675EA /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		A57B45D2194648BF00DE00B0 /* StatusBarMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarMenuController.swift; sourceTree = "<group>"; };
 		A597A8D71949815700EE3412 /* CIMenu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CIMenu-Bridging-Header.h"; sourceTree = "<group>"; };
 		A59BD296194501A800562329 /* CIMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +112,7 @@
 				A57B45D2194648BF00DE00B0 /* StatusBarMenuController.swift */,
 				A5F41C59194A0236002A923D /* PreferencesWindowController.swift */,
 				A59BD299194501A800562329 /* Supporting Files */,
+				A553174B1996CD7D004675EA /* Project.swift */,
 			);
 			path = CIMenu;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				A59BD29E194501A800562329 /* AppDelegate.swift in Sources */,
 				A5F41C61194A2D45002A923D /* NSApplicationLoginItems.m in Sources */,
 				A57B45D3194648BF00DE00B0 /* StatusBarMenuController.swift in Sources */,
+				A553174C1996CD7D004675EA /* Project.swift in Sources */,
 				A59BD29C194501A800562329 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

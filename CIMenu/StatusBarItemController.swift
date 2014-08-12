@@ -10,7 +10,7 @@ import Cocoa
 
 class StatusBarItemController {
     let statusBar : NSStatusItem
-    
+
     let image = NSImage(named:"gear_offline")
     let alternateImage = NSImage(named:"gear_clicked")
     
@@ -27,7 +27,9 @@ class StatusBarItemController {
     init() {
         statusBar = NSStatusBar
             .systemStatusBar()
-            .statusItemWithLength( CGFloat(NSVariableStatusItemLength) )
+            .statusItemWithLength(-1) // linker error (bug) http://stackoverflow.com/a/24026327
+//            .statusItemWithLength(NSVariableStatusItemLength)
+
         statusBar.highlightMode = true
     }
     
