@@ -9,8 +9,6 @@
 import Cocoa
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    //    @IBOutlet var window: NSWindow
-    
     let statusBarItemController = StatusBarItemController()
     let statusBarMenuController = StatusBarMenuController()
 

@@ -10,18 +10,17 @@ import Cocoa
 
 class StatusBarItemController {
     let statusBar : NSStatusItem
-
     let image = NSImage(named:"gear_offline")
     let alternateImage = NSImage(named:"gear_clicked")
     
     var menuIsActive = false
     var statusBarItemMenu : NSMenu {
-    set(menu) {
-        statusBar.menu = menu
-    }
-    get {
-        return statusBar.menu
-    }
+        set(menu) {
+            statusBar.menu = menu
+        }
+        get {
+            return statusBar.menu
+        }
     }
     
     init() {
