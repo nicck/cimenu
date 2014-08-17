@@ -3,8 +3,8 @@ import Cocoa
 class PreferencesWindowController: NSWindowController, NSTextFieldDelegate {
     let defaults = NSUserDefaults.standardUserDefaults()
 
-    @IBOutlet var tokenTextField : NSTextField!
-    @IBOutlet var startCheckBox : NSButton!
+    @IBOutlet private var tokenTextField : NSTextField!
+    @IBOutlet private var startCheckBox : NSButton!
     
 //    func windowWillLoad()
     override func windowDidLoad() {
