@@ -47,46 +47,31 @@ class StatusBarMenuController: NSObject, NSMenuDelegate, NSURLConnectionDataDele
     func updateMenu() {
         mainMenu.removeAllItems()
 
-//        "http://localhost/projects.json"
-//        println(projectsList)
         let json = JSON.fromURL("http://localhost/projects.json")
 
         var projects: [Project] = []
 
         if let projectsJson = json.asArray {
-            for projectJson in projectsJson {
-//                println(projectJson)
-//                println("---------")
-
-                if let name = projectJson["name"].asString {
-                    var branches: [Branch] = []
-
-                    if let branchesJson = projectJson["branches"].asArray {
-                        for branchJson in branchesJson {
-
-                            if let name = branchJson["branch_name"].asString {
-                                let branch = Branch(branchName: name)
-                                branches.append(branch)
-                            } else {
-                                let e = branchJson["branch_name"].asError
-                                println(e)
-                            }
-
-                        }
-                    }
-                    let project = Project(name: name, branches: branches)
-                    projects.append(project)
-                }
-            }
+            projects = Project.fromJson(projectsJson)
+        } else {
+            let e = json.asError
+            println(e)
         }
 
         for project in projects {
             let item = NSMenuItem()
             item.title = project.name
             mainMenu.addItem(item)
+
             for branch in project.branches {
-                let item = NSMenuItem()
-                item.title = "-- " + branch.branchName
+                let item = MyNSMenuItem()
+
+                item.title = branch.branchName
+                item.image = branch.image
+                item.url = branch.buildUrl
+                item.target = self
+                item.action = Selector("openBuild:")
+
                 mainMenu.addItem(item)
             }
         }
@@ -116,5 +101,12 @@ class StatusBarMenuController: NSObject, NSMenuDelegate, NSURLConnectionDataDele
         NSApplication.sharedApplication().terminate(self)
     }
 
+    func openBuild(sender : MyNSMenuItem) {
+        let url = NSURL.URLWithString(sender.url)
+        NSWorkspace.sharedWorkspace().openURL(url)
+    }
 }
 
+class MyNSMenuItem: NSMenuItem {
+    var url: String!
+}

@@ -8,7 +8,7 @@ class PreferencesWindowController: NSWindowController, NSTextFieldDelegate {
     
 //    func windowWillLoad()
     override func windowDidLoad() {
-        if let apiKey : AnyObject! = defaults.objectForKey("org.cimenu.apikey") {
+        if let apiKey: AnyObject! = defaults.objectForKey("org.cimenu.apikey") {
             tokenTextField.stringValue = apiKey as NSString
         }
 
