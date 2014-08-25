@@ -47,7 +47,10 @@ class StatusBarMenuController: NSObject, NSMenuDelegate, NSURLConnectionDataDele
     func updateMenu() {
         mainMenu.removeAllItems()
 
-        let json = JSON.fromURL("http://localhost/projects.json")
+        let token = NSUserDefaults.standardUserDefaults().objectForKey("org.cimenu.apikey") as String
+
+        let json = JSON.fromURL("https://semaphoreapp.com/api/v1/projects?auth_token=" + token)
+//        let json = JSON.fromURL("http://localhost/projects.json")
 
         var projects: [Project] = []
 
@@ -59,11 +62,14 @@ class StatusBarMenuController: NSObject, NSMenuDelegate, NSURLConnectionDataDele
         }
 
         for project in projects {
-            let item = NSMenuItem()
-            item.title = project.name
-            mainMenu.addItem(item)
+            if countElements(project.recentBranches) > 0 {
+                let item = NSMenuItem()
+                item.title = project.name
 
-            for branch in project.branches {
+                mainMenu.addItem(item)
+            }
+
+            for branch in project.recentBranches {
                 let item = MyNSMenuItem()
 
                 item.title = branch.branchName
@@ -84,7 +90,7 @@ class StatusBarMenuController: NSObject, NSMenuDelegate, NSURLConnectionDataDele
         mainMenu.addItem(quitItem)
     }
     
-    func showAboutPanel(sender : NSMenuItem!) {
+    func showAboutPanel(sender: NSMenuItem) {
         NSApp.activateIgnoringOtherApps(true)
         NSApp.orderFrontStandardAboutPanel(sender)
     }
@@ -96,12 +102,12 @@ class StatusBarMenuController: NSObject, NSMenuDelegate, NSURLConnectionDataDele
         preferencesWindowController.window.makeKeyAndOrderFront(self)
     }
 
-    func terminateApplication(sender : NSMenuItem) {
+    func terminateApplication(sender: NSMenuItem) {
         println("exit!")
         NSApplication.sharedApplication().terminate(self)
     }
 
-    func openBuild(sender : MyNSMenuItem) {
+    func openBuild(sender: MyNSMenuItem) {
         let url = NSURL.URLWithString(sender.url)
         NSWorkspace.sharedWorkspace().openURL(url)
     }

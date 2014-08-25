@@ -8,6 +8,7 @@
 
 class Branch {
     let branchName: String
+    let startedAt: NSDate
     let buildUrl: String
     let result: String
 
@@ -36,9 +37,9 @@ class Branch {
     }
 
     init(branchJson: JSON) {
+        startedAt = branchJson["started_at"].asDate!
         branchName = branchJson["branch_name"].asString!
         buildUrl = branchJson["build_url"].asString!
         result = branchJson["result"].asString!
     }
-
 }

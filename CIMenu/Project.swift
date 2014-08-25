@@ -12,6 +12,7 @@
 class Project {
     let name: String
     let branches: [Branch]
+    let recentBranches: [Branch]
 
     class func fromJson(projectsJson: [JSON]) -> [Project] {
         var projects: [Project] = []
@@ -25,15 +26,19 @@ class Project {
     }
 
     init(projectJson: JSON) {
-        self.name = projectJson["name"].asString!
+        name = projectJson["name"].asString!
 
-        var branches: [Branch] = []
+        let branchesJson = projectJson["branches"].asArray!
+        branches = Branch.fromJson(branchesJson)
 
-        if let branchesJson = projectJson["branches"].asArray {
-            branches = Branch.fromJson(branchesJson)
-        }
+        let now = NSDate()
+        let dayInSeconds = Double(86400)
+        let interval: NSTimeInterval = now.timeIntervalSinceReferenceDate - dayInSeconds * Double(2)
+        let twoWeeksAgo = NSDate(timeIntervalSinceReferenceDate: interval)
 
-        self.branches = branches
+        recentBranches = branches.filter({ (branch: Branch) -> Bool in
+            branch.startedAt.compare(twoWeeksAgo) == NSComparisonResult.OrderedDescending
+        })
     }
 }
 
