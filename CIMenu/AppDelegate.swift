@@ -10,15 +10,16 @@ import Cocoa
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     let statusBarItemController = StatusBarItemController()
-    let statusBarMenuController = StatusBarMenuController()
+    var statusBarMenuController: StatusBarMenuController!
 
     func applicationWillFinishLaunching(aNotification: NSNotification?) {
         println("applicationWillFinishLaunching")
-        statusBarItemController.statusBarItemMenu = statusBarMenuController.mainMenu
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification?) {
         println("applicationDidFinishLaunching")
+        statusBarMenuController = StatusBarMenuController()
+        statusBarItemController.statusBarItemMenu = statusBarMenuController.mainMenu
         statusBarItemController.showImage()
 //        statusBarMenuController.updater = self.updater
 //        statusBarMenuController.statusBarItemController = statusBarItemController

@@ -1,3 +1,4 @@
+// https://github.com/dankogai/swift-json
 //
 //  json.swift
 //  json
@@ -318,5 +319,3 @@ extension JSON : Printable {
     }
     public var description:String { return toString() }
 }
-
-//  https://raw.githubusercontent.com/dankogai/swift-json/master/json.swift

@@ -15,9 +15,9 @@
 		A59BD2AF194501A800562329 /* CIMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59BD2AE194501A800562329 /* CIMenuTests.swift */; };
 		A59BD2B91945079300562329 /* StatusBarItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59BD2B81945079300562329 /* StatusBarItemController.swift */; };
 		A59BD2BB19450F5300562329 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59BD2BA19450F5300562329 /* Icons.xcassets */; };
+		A5B1158E19ABDBDA00A2F7DE /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B1158D19ABDBDA00A2F7DE /* Alamofire.swift */; };
 		A5DB5FE219A13D12000304F7 /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DB5FE119A13D12000304F7 /* Branch.swift */; };
 		A5DB5FE419A140CA000304F7 /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DB5FE319A140CA000304F7 /* json.swift */; };
-		A5DB5FE619A14950000304F7 /* ConnectionDelegte.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DB5FE519A14950000304F7 /* ConnectionDelegte.swift */; };
 		A5F41C5A194A0236002A923D /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F41C59194A0236002A923D /* PreferencesWindowController.swift */; };
 		A5F41C5D194A0698002A923D /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5F41C5B194A0698002A923D /* PreferencesWindow.xib */; };
 		A5F41C61194A2D45002A923D /* NSApplicationLoginItems.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F41C60194A2D45002A923D /* NSApplicationLoginItems.m */; };
@@ -61,9 +61,9 @@
 		A59BD2AE194501A800562329 /* CIMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMenuTests.swift; sourceTree = "<group>"; };
 		A59BD2B81945079300562329 /* StatusBarItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarItemController.swift; sourceTree = "<group>"; };
 		A59BD2BA19450F5300562329 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		A5B1158D19ABDBDA00A2F7DE /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		A5DB5FE119A13D12000304F7 /* Branch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
 		A5DB5FE319A140CA000304F7 /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
-		A5DB5FE519A14950000304F7 /* ConnectionDelegte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionDelegte.swift; sourceTree = "<group>"; };
 		A5F41C59194A0236002A923D /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		A5F41C5C194A0698002A923D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PreferencesWindow.xib; sourceTree = "<group>"; };
 		A5F41C5F194A2D45002A923D /* NSApplicationLoginItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSApplicationLoginItems.h; sourceTree = "<group>"; };
@@ -91,6 +91,7 @@
 		A59BD28D194501A800562329 = {
 			isa = PBXGroup;
 			children = (
+				A5B1158C19ABDBDA00A2F7DE /* Alamofire */,
 				A59BD298194501A800562329 /* CIMenu */,
 				A5F41C5E194A2D45002A923D /* NSApplicationLoginItems */,
 				A59BD2AB194501A800562329 /* CIMenuTests */,
@@ -120,7 +121,6 @@
 				A59BD299194501A800562329 /* Supporting Files */,
 				A553174B1996CD7D004675EA /* Project.swift */,
 				A5DB5FE119A13D12000304F7 /* Branch.swift */,
-				A5DB5FE519A14950000304F7 /* ConnectionDelegte.swift */,
 			);
 			path = CIMenu;
 			sourceTree = "<group>";
@@ -151,6 +151,14 @@
 				A59BD2AD194501A800562329 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A5B1158C19ABDBDA00A2F7DE /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				A5B1158D19ABDBDA00A2F7DE /* Alamofire.swift */,
+			);
+			path = Alamofire;
 			sourceTree = "<group>";
 		};
 		A5F41C5E194A2D45002A923D /* NSApplicationLoginItems */ = {
@@ -270,8 +278,8 @@
 				A59BD29E194501A800562329 /* AppDelegate.swift in Sources */,
 				A5F41C61194A2D45002A923D /* NSApplicationLoginItems.m in Sources */,
 				A57B45D3194648BF00DE00B0 /* StatusBarMenuController.swift in Sources */,
-				A5DB5FE619A14950000304F7 /* ConnectionDelegte.swift in Sources */,
 				A5DB5FE219A13D12000304F7 /* Branch.swift in Sources */,
+				A5B1158E19ABDBDA00A2F7DE /* Alamofire.swift in Sources */,
 				A553174C1996CD7D004675EA /* Project.swift in Sources */,
 				A59BD29C194501A800562329 /* main.swift in Sources */,
 			);

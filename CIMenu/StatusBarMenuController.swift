@@ -13,7 +13,13 @@ class StatusBarMenuController: NSObject, NSMenuDelegate, NSURLConnectionDataDele
     let preferencesWindowController = PreferencesWindowController(windowNibName: "PreferencesWindow")
 
 //    var projectsList :
-    
+
+    private var loadingItem: NSMenuItem {
+        let item = NSMenuItem()
+        item.title = "...loading..."
+        return item
+    }
+
     var aboutItem : NSMenuItem {
         let item = NSMenuItem()
         item.title = "About CIMenu"
@@ -41,25 +47,21 @@ class StatusBarMenuController: NSObject, NSMenuDelegate, NSURLConnectionDataDele
     override init() {
         super.init()
         mainMenu.delegate = self
-        updateMenu()
-    }
 
-    func updateMenu() {
-        mainMenu.removeAllItems()
+        mainMenu.addItem(loadingItem)
 
         let token = NSUserDefaults.standardUserDefaults().objectForKey("org.cimenu.apikey") as String
+        request(.GET, "https://semaphoreapp.com/api/v1/projects?auth_token=" + token)
+            .responseString { (request, response, string, error) in
+                let json = JSON.parse(string!)
+                let projects = Project.fromJson(json.asArray!)
 
-        let json = JSON.fromURL("https://semaphoreapp.com/api/v1/projects?auth_token=" + token)
-//        let json = JSON.fromURL("http://localhost/projects.json")
+                self.updateMenu(projects)
+            }
+    }
 
-        var projects: [Project] = []
-
-        if let projectsJson = json.asArray {
-            projects = Project.fromJson(projectsJson)
-        } else {
-            let e = json.asError
-            println(e)
-        }
+    func updateMenu(projects: [Project]) {
+        mainMenu.removeAllItems()
 
         for project in projects {
             if countElements(project.recentBranches) > 0 {
