@@ -12,7 +12,9 @@ class StatusBarItemController {
     let statusBar : NSStatusItem
     let image = NSImage(named:"gear_offline")
     let alternateImage = NSImage(named:"gear_clicked")
-    
+
+    let notificationCenter = NSNotificationCenter.defaultCenter()
+
     var menuIsActive = false
     var statusBarItemMenu : NSMenu {
         set(menu) {
@@ -30,10 +32,34 @@ class StatusBarItemController {
 //            .statusItemWithLength(NSVariableStatusItemLength)
 
         statusBar.highlightMode = true
+
+        subscribeToConnectionEvents()
     }
-    
+
     func showImage() {
         statusBar.image = menuIsActive ? alternateImage : image
     }
 
+    @objc func startLoading() {
+        println("startLoading")
+    }
+
+    @objc func stopLoading() {
+        println("stopLoading")
+    }
+
+    private func subscribeToConnectionEvents() {
+        notificationCenter.addObserver(self,
+            selector: Selector("startLoading"),
+            name: "org.cimenu.semaphore.connectionWillStartLoading",
+            object: nil
+        )
+
+        notificationCenter.addObserver(self,
+            selector: Selector("stopLoading"),
+            name: "org.cimenu.semaphore.dataReceived",
+            object: nil
+        )
+
+    }
 }

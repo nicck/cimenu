@@ -11,38 +11,7 @@ import Cocoa
 class StatusBarMenuController: NSObject, NSMenuDelegate, NSURLConnectionDataDelegate {
     let mainMenu = NSMenu()
     let preferencesWindowController = PreferencesWindowController(windowNibName: "PreferencesWindow")
-
-//    var projectsList :
-
-    private var loadingItem: NSMenuItem {
-        let item = NSMenuItem()
-        item.title = "...loading..."
-        return item
-    }
-
-    var aboutItem : NSMenuItem {
-        let item = NSMenuItem()
-        item.title = "About CIMenu"
-        item.target = self
-        item.action = "showAboutPanel:"
-        return item
-    }
-
-    var preferencesItem : NSMenuItem {
-        let item = NSMenuItem()
-        item.title = "Preferences…"
-        item.target = self
-        item.action = "showPreferences:"
-        return item
-    }
-
-    var quitItem : NSMenuItem {
-        let item = NSMenuItem()
-        item.title = "Quit"
-        item.target = self
-        item.action = "terminateApplication:"
-        return item
-    }
+    let notificationCenter = NSNotificationCenter.defaultCenter()
 
     override init() {
         super.init()
@@ -50,24 +19,30 @@ class StatusBarMenuController: NSObject, NSMenuDelegate, NSURLConnectionDataDele
 
         mainMenu.addItem(loadingItem)
 
-        let token = NSUserDefaults.standardUserDefaults().objectForKey("org.cimenu.apikey") as String
-        request(.GET, "https://semaphoreapp.com/api/v1/projects?auth_token=" + token)
-            .responseString { (request, response, string, error) in
-                let json = JSON.parse(string!)
-                let projects = Project.fromJson(json.asArray!)
+        notificationCenter.addObserver(self,
+            selector: Selector("dataReceived:"),
+            name: "org.cimenu.semaphore.dataReceived",
+            object: nil
+        )
+    }
 
-                self.updateMenu(projects)
-            }
+    func dataReceived(notification: NSNotification) {
+        var json = notification.userInfo["json"] as JSON
+        let projects = Project.fromJson(json.asArray!)
+        updateMenu(projects)
     }
 
     func updateMenu(projects: [Project]) {
         mainMenu.removeAllItems()
+
+        mainMenu.addItem(headItem)
 
         for project in projects {
             if countElements(project.recentBranches) > 0 {
                 let item = NSMenuItem()
                 item.title = project.name
 
+                mainMenu.addItem(NSMenuItem.separatorItem())
                 mainMenu.addItem(item)
             }
 
@@ -113,6 +88,61 @@ class StatusBarMenuController: NSObject, NSMenuDelegate, NSURLConnectionDataDele
         let url = NSURL.URLWithString(sender.url)
         NSWorkspace.sharedWorkspace().openURL(url)
     }
+
+    private var headItem: NSMenuItem {
+        var str = "<font face='Lucida Grande'><b>CI Menu</b> v1.0</font>"
+
+            var attributedString = NSMutableAttributedString(
+                HTML: str.dataUsingEncoding(NSUTF8StringEncoding),
+                documentAttributes: nil)
+
+            var paragraph = NSMutableParagraphStyle()
+
+            paragraph.alignment = NSTextAlignment.LeftTextAlignment
+            paragraph.lineBreakMode = NSLineBreakMode.ByTruncatingMiddle
+
+            attributedString.addAttribute(
+                NSParagraphStyleAttributeName,
+                value: paragraph,
+                range: NSMakeRange(0, attributedString.length)
+            )
+
+            let item = NSMenuItem()
+            item.attributedTitle = attributedString
+
+            return item
+    }
+
+    private var loadingItem: NSMenuItem {
+        let item = NSMenuItem()
+            item.title = "Loading..."
+            return item
+    }
+
+    private var aboutItem : NSMenuItem {
+        let item = NSMenuItem()
+            item.title = "About CIMenu"
+            item.target = self
+            item.action = "showAboutPanel:"
+            return item
+    }
+
+    private var preferencesItem : NSMenuItem {
+        let item = NSMenuItem()
+            item.title = "Preferences…"
+            item.target = self
+            item.action = "showPreferences:"
+            return item
+    }
+
+    private var quitItem : NSMenuItem {
+        let item = NSMenuItem()
+            item.title = "Quit"
+            item.target = self
+            item.action = "terminateApplication:"
+            return item
+    }
+
 }
 
 class MyNSMenuItem: NSMenuItem {

@@ -9,6 +9,7 @@
 import Cocoa
 
 class AppDelegate: NSObject, NSApplicationDelegate {
+    let dataFetcher = DataFetcher()
     let statusBarItemController = StatusBarItemController()
     var statusBarMenuController: StatusBarMenuController!
 
@@ -23,6 +24,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarItemController.showImage()
 //        statusBarMenuController.updater = self.updater
 //        statusBarMenuController.statusBarItemController = statusBarItemController
+
+        dataFetcher.fetch()
+        dataFetcher.startTimer()
     }
 
     func applicationWillTerminate(aNotification: NSNotification?) {

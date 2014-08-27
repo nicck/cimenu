@@ -31,12 +31,12 @@ class Project {
         let branchesJson = projectJson["branches"].asArray!
         branches = Branch.fromJson(branchesJson)
 
-        let now = NSDate()
         let dayInSeconds = Double(86400)
-        let interval: NSTimeInterval = now.timeIntervalSinceReferenceDate - dayInSeconds * Double(2)
+        let interval = NSDate().timeIntervalSinceReferenceDate - dayInSeconds * Double(14*2)
         let twoWeeksAgo = NSDate(timeIntervalSinceReferenceDate: interval)
 
         recentBranches = branches.filter({ (branch: Branch) -> Bool in
+//            branch.branchName == "master" ||
             branch.startedAt.compare(twoWeeksAgo) == NSComparisonResult.OrderedDescending
         })
     }

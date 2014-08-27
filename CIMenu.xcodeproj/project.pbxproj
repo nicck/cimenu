@@ -21,6 +21,7 @@
 		A5F41C5A194A0236002A923D /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F41C59194A0236002A923D /* PreferencesWindowController.swift */; };
 		A5F41C5D194A0698002A923D /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5F41C5B194A0698002A923D /* PreferencesWindow.xib */; };
 		A5F41C61194A2D45002A923D /* NSApplicationLoginItems.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F41C60194A2D45002A923D /* NSApplicationLoginItems.m */; };
+		A5F5A25A19AE74B000FD9CF0 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5A25919AE74B000FD9CF0 /* DataFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		A5F41C5C194A0698002A923D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PreferencesWindow.xib; sourceTree = "<group>"; };
 		A5F41C5F194A2D45002A923D /* NSApplicationLoginItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSApplicationLoginItems.h; sourceTree = "<group>"; };
 		A5F41C60194A2D45002A923D /* NSApplicationLoginItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSApplicationLoginItems.m; sourceTree = "<group>"; };
+		A5F5A25919AE74B000FD9CF0 /* DataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				A59BD299194501A800562329 /* Supporting Files */,
 				A553174B1996CD7D004675EA /* Project.swift */,
 				A5DB5FE119A13D12000304F7 /* Branch.swift */,
+				A5F5A25919AE74B000FD9CF0 /* DataFetcher.swift */,
 			);
 			path = CIMenu;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5F41C5A194A0236002A923D /* PreferencesWindowController.swift in Sources */,
+				A5F5A25A19AE74B000FD9CF0 /* DataFetcher.swift in Sources */,
 				A59BD2B91945079300562329 /* StatusBarItemController.swift in Sources */,
 				A5DB5FE419A140CA000304F7 /* json.swift in Sources */,
 				A59BD29E194501A800562329 /* AppDelegate.swift in Sources */,
