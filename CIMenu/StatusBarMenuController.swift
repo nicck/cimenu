@@ -27,7 +27,7 @@ class StatusBarMenuController: NSObject, NSMenuDelegate, NSURLConnectionDataDele
     }
 
     func dataReceived(notification: NSNotification) {
-        var json = notification.userInfo["json"] as JSON
+        var json = notification.userInfo!["json"] as JSON
         let projects = Project.fromJson(json.asArray!)
         updateMenu(projects)
     }
