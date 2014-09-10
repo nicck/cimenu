@@ -32,7 +32,7 @@ class DataFetcher {
             object: nil,
             userInfo: nil
         )
-
+        println("GET \(url + token)")
         request(.GET, url + token)
             .responseString { (request, response, string, error) in
                 let json = JSON.parse(string!)

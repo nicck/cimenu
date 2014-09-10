@@ -21,7 +21,7 @@ class PreferencesWindowController: NSWindowController, NSTextFieldDelegate {
     
 
     override func controlTextDidChange(notification : NSNotification!) {
-        let value = notification.object.stringValue
+        let value = notification.object!.stringValue
 
         if (value as NSString).length == 20 {
             println("controlTextDidChange and length is 20: \(value)")

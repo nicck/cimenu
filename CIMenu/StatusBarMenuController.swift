@@ -85,7 +85,7 @@ class StatusBarMenuController: NSObject, NSMenuDelegate, NSURLConnectionDataDele
     }
 
     func openBuild(sender: MyNSMenuItem) {
-        let url = NSURL.URLWithString(sender.url)
+        let url = NSURL(string: sender.url)
         NSWorkspace.sharedWorkspace().openURL(url)
     }
 
