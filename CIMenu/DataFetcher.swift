@@ -7,8 +7,8 @@
 //
 
 class DataFetcher {
-//    let url = "https://semaphoreapp.com/api/v1/projects?auth_token="
-    let url = "http://localhost/projects.json?auth_token="
+    let url = "https://semaphoreapp.com/api/v1/projects?auth_token="
+//    let url = "http://localhost/projects.json?auth_token="
     let interval = NSTimeInterval(15)
     let defaults = NSUserDefaults.standardUserDefaults()
     let notificationCenter = NSNotificationCenter.defaultCenter()

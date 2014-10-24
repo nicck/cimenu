@@ -16,7 +16,7 @@ class StatusBarItemController {
     let notificationCenter = NSNotificationCenter.defaultCenter()
 
     var menuIsActive = false
-    var statusBarItemMenu : NSMenu {
+    var statusBarItemMenu : NSMenu? {
         set(menu) {
             statusBar.menu = menu
         }

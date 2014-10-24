@@ -35,7 +35,7 @@ class StatusBarMenuController: NSObject, NSMenuDelegate, NSURLConnectionDataDele
     func updateMenu(projects: [Project]) {
         mainMenu.removeAllItems()
 
-        mainMenu.addItem(headItem)
+//        mainMenu.addItem(headItem)
 
         for project in projects {
             if countElements(project.recentBranches) > 0 {
@@ -76,7 +76,7 @@ class StatusBarMenuController: NSObject, NSMenuDelegate, NSURLConnectionDataDele
     func showPreferences(NSMenuItem) {
         println("GeneralPreferencesView")
 //        preferencesWindowController.showWindow(self)
-        preferencesWindowController.window.makeKeyAndOrderFront(self)
+        preferencesWindowController.window?.makeKeyAndOrderFront(self)
     }
 
     func terminateApplication(sender: NSMenuItem) {
@@ -85,33 +85,33 @@ class StatusBarMenuController: NSObject, NSMenuDelegate, NSURLConnectionDataDele
     }
 
     func openBuild(sender: MyNSMenuItem) {
-        let url = NSURL(string: sender.url)
+        let url = NSURL(string: sender.url)!
         NSWorkspace.sharedWorkspace().openURL(url)
     }
 
-    private var headItem: NSMenuItem {
-        var str = "<font face='Lucida Grande'><b>CI Menu</b> v1.0</font>"
-
-            var attributedString = NSMutableAttributedString(
-                HTML: str.dataUsingEncoding(NSUTF8StringEncoding),
-                documentAttributes: nil)
-
-            var paragraph = NSMutableParagraphStyle()
-
-            paragraph.alignment = NSTextAlignment.LeftTextAlignment
-            paragraph.lineBreakMode = NSLineBreakMode.ByTruncatingMiddle
-
-            attributedString.addAttribute(
-                NSParagraphStyleAttributeName,
-                value: paragraph,
-                range: NSMakeRange(0, attributedString.length)
-            )
-
-            let item = NSMenuItem()
-            item.attributedTitle = attributedString
-
-            return item
-    }
+//    private var headItem: NSMenuItem {
+//        var str = "<font face='Lucida Grande'><b>CI Menu</b> v1.0</font>"
+//
+//            var attributedString = NSMutableAttributedString(
+//                HTML: str.dataUsingEncoding(NSUTF8StringEncoding),
+//                documentAttributes: nil)
+//
+//            var paragraph = NSMutableParagraphStyle()
+//
+//            paragraph.alignment = NSTextAlignment.LeftTextAlignment
+//            paragraph.lineBreakMode = NSLineBreakMode.ByTruncatingMiddle
+//
+//            attributedString.addAttribute(
+//                NSParagraphStyleAttributeName,
+//                value: paragraph,
+//                range: NSMakeRange(0, attributedString.length)
+//            )
+//
+//            let item = NSMenuItem()
+//            item.attributedTitle = attributedString
+//
+//            return item
+//    }
 
     private var loadingItem: NSMenuItem {
         let item = NSMenuItem()

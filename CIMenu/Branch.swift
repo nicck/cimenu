@@ -12,7 +12,7 @@ class Branch {
     let buildUrl: String
     let result: String
 
-    var image: NSImage {
+    var image: NSImage? {
         switch result {
         case "passed":
             return NSImage(named: NSImageNameStatusAvailable)
